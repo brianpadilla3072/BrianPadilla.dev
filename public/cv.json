@@ -1,0 +1,81 @@
+{
+    "EXPERIENCE" : [
+        {
+          "date": "Actualmente...",
+          "title": "Creador de Contenido",
+          "company": "Twitch",
+          "description":
+            "Divulgo sobre programación y desarrollo web en diferentes plataformas. Galardonado como mejor creador de contenido de habla no-inglesa en 2022 y mejor comunidad en 2023 por GitHub.",
+          "link": "https://twitch.tv/midudev"
+        },
+        {
+          "date": "Septiembre 2022",
+          "title": "Principal Frontend Engineer",
+          "company": "Adevinta Spain",
+          "description":
+            "Responsable de la plataforma, componentes y utilidades para la creación y desarrollo de aplicaciones web. Mejora de un 30% en la entrega de software. Implantación de medidas de integración continua y despliegue con A/B testing en más de 15 equipos."
+        }
+      ],
+      "navItems" : [
+        {
+          "title": "Experiencia",
+          "label": "experiencia",
+          "url": "/#experiencia"
+        },
+        {
+          "title": "Proyectos",
+          "label": "proyectos",
+          "url": "/#proyectos"
+        },
+        {
+          "title": "Sobre mí",
+          "label": "sobre-mi",
+          "url": "/#sobre-mi"
+        },
+        {
+          "title": "Contacto",
+          "label": "contacto",
+          "url": "mailto:miduga@gmail.com"
+        }
+      ],
+      "PROJECTS" : [
+        {
+          "title": "SVGL - A beautiful library with SVG logos",
+          "description":
+            "Biblioteca de logos SVG de las marcas más populares. +10k visitas al mes. +2K svgs descargados. Creado desde cero con Next.js, React y Tailwind CSS.",
+          "link": "https://svgl.vercel.app/",
+          "github": "https://github.com/pheralb/svgl",
+          "image": "/projects/svgl.webp",
+          "tags": ["TAGS.NEXT", "TAGS.TAILWIND"]
+        },
+        {
+          "title": "AdventJS - Retos de programación con JavaScript y TypeScript",
+          "description":
+            "Plataforma gratuita con retos de programación. Más de 1 millón de visitas en un mes. +50K retos completados. Creada desde cero con Next.js, React y Tailwind CSS.",
+          "link": "https://adventjs.dev",
+          "image": "/projects/adventjs.webp",
+          "tags": ["TAGS.NEXT"," TAGS.TAILWIND"]
+        }
+      ],
+      "personalData":{
+        "name": "Brian Padilla",
+        "personalImageAlt": "Brian Padilla",
+        "imageSrc": "/me.jpg",
+        "linkedInUrl": "https://www.linkedin.com/in/brianpadilla01",
+        "email": "brianpadilla.work@gmail.com",
+        "description": "+15 años de experiencia. Ingeniero de Software y Creador de Contenido sobre Programación de Barcelona, España 🇪🇸. Especializado en el desarrollo de aplicaciones web únicas.",
+        "badgeText": "Disponible para trabajar"
+      },
+      "aboutme": {
+          "name": "Miguel Ángel",
+          "nickname": "brian",
+          "imageSrc": "/me.jpg",
+          "personalImageAlt": "Brian Padilla",
+          "bio": [
+            "Me llamo Miguel Ángel pero mis amigos me llaman midu. Empecé en la programación con un Amstrad, tenía 10 años. Actualmente estoy liderando equipos de desarrollo en multinacionales.",
+            "Algunos de mis éxitos incluyen colaborar con Mozilla para el desarrollo de las primeras apps en su sistema FirefoxOS. Aunque hoy está desaparecido fue un gran avance en el mundo del desarrollo web.",
+            "Como creador de contenido, cuento con el canal de habla hispana más visto del mundo en la categoría de Software & Game Development en Twitch. Mi objetivo es mejorar la empleabilidad de la comunidad hispana y el acceso a contenido de calidad."
+          ]
+      }
+      
+}
