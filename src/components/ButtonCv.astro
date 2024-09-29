@@ -1,0 +1,23 @@
+---
+import CvSvg from "public/CvSvg.astro"
+const cvUrl = "curriculumvitae"; // Ruta al archivo PDF del CV
+---
+
+<div class="relative ml-1 mr-1">
+  <a
+    href={cvUrl}
+ 
+    class="appearance-none border-none flex hover:scale-125 transition"
+  >
+    <span class="sr-only">Descargar CV</span>
+    <CvSvg class="size-5"/>
+  </a>
+</div>
+
+<style>
+  .size-5 {
+    width: 1rem;
+    height: 1rem;
+  }
+
+</style>

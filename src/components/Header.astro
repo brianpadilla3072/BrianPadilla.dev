@@ -1,28 +1,10 @@
 ---
 import ThemeToggle from "./ThemeToggle.astro"
+import ButtonCv from "./ButtonCv.astro"
 
-const navItems = [
-  {
-    title: "Experiencia",
-    label: "experiencia",
-    url: "/#experiencia",
-  },
-  {
-    title: "Proyectos",
-    label: "proyectos",
-    url: "/#proyectos",
-  },
-  {
-    title: "Sobre mí",
-    label: "sobre-mi",
-    url: "/#sobre-mi",
-  },
-  {
-    title: "Contacto",
-    label: "contacto",
-    url: "mailto:miduga@gmail.com",
-  },
-]
+import cv from 'public/cv.json'; // Asegúrate de ajustar la ruta según tu estructura
+
+const navItems = cv.navItems;
 ---
 
 <header
@@ -42,6 +24,7 @@ const navItems = [
         </a>
       ))
     }
+    <ButtonCv/>
     <ThemeToggle />
   </nav>
 </header>

@@ -1,0 +1,248 @@
+---
+// You can include any necessary imports here
+const data = {
+  name: "Brian Padilla",
+  role: "Desarrollador Full-Stack",
+  contact: {
+    phone: "(+54) 291 437 7615",
+    timezone: "(GMT-3) Argentina",
+    github: "https://github.com/brianpadilla3072",
+    email: "brianpadilla.work@gmail.com",
+    linkedin: "https://www.linkedin.com/in/brianpadilla01/",
+  },
+  profile: "Fullstack developer con experiencia en JavaScript. Dominio de librerías/frameworks como React, NodeJS, jest entre otras tecnologías.",
+  projects: [
+    {
+      name: "Dios Nuestro Padre - Aplicación para la Iglesia DNP",
+      link: "https://github.com/brianpadilla3072/client-dnp-app",
+      description: "Desarrollé la aplicación con el objetivo de proporcionar a los miembros de la iglesia acceso rápido y fácil a devocionales, fechas importantes y funcionalidades de perfil.",
+      technologies: "React Native | React | Express | SQLite | Swagger | JWT",
+      role: "fullStack",
+    },
+    {
+      name: "Experiencias culinarias",
+      link: "https://pryback-10xh.onrender.com/apidoc",
+      description: "Acerca chefs con sus comensales para que pueda establecer eventos de no más de 8 personas con localización, el comensal puede reservar una experiencia culinaria con Stripe.",
+      technologies: "Nestjs | typescript | prisma | postgres | auth0 | jwt | cloudinary | nodemailer | stripe",
+      role: "Backend",
+    },
+  ],
+  technologies: "React Native | NodeJS | Express | JWT | C++ | PHP | Jest | React | Vite | NextJS | Nest | Git | GitHub | Postman | Photoshop | Tailwind | Leaflet | ElectronJS | Java | Pascal | HTML | CSS | Firebase | Bootstrap",
+  experience: [
+    {
+      company: "Cámara Junior Internacional",
+      location: "Bahia Blanca, Argentina",
+      years: "2021 - 2023",
+      description: "Contribuí activamente en la selección y clasificación de los participantes en diversas categorías.",
+    },
+    {
+      company: "Kheiron",
+      location: "Palmira, Valle del Cauca, Colombia",
+      years: "2024",
+      description: "Desarrollo de KheironUI, una biblioteca de componentes de interfaz de usuario.",
+    },
+  ],
+  education: "Henry Bootcamp",
+};
+---
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cv</title>
+    <style type="text/css">
+        /* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+}
+
+main#pdf-content {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+}
+
+section#header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid #333;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+#header strong#name {
+  font-size: 24px;
+  color: #333;
+}
+
+#header p#role {
+  font-size: 18px;
+  color: #666;
+}
+
+#header div p {
+  margin: 5px 0;
+}
+
+a {
+  text-decoration: none;
+  color: #0066cc;
+}
+
+/* Section Headings */
+.c32, .c3 {
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.c39 {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+/* Profile Section */
+#profile {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+/* Projects Section */
+#projects {
+  margin-bottom: 20px;
+}
+
+#projects div {
+  margin-bottom: 15px;
+}
+
+#projects p {
+  font-size: 16px;
+}
+
+ul.c23 {
+  list-style-type: disc;
+  margin-left: 20px;
+  font-size: 14px;
+}
+
+ul.c23 li {
+  margin-bottom: 5px;
+}
+
+/* Experience Section */
+#experience {
+  margin-bottom: 20px;
+}
+
+#experience p {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+/* Education Section */
+#education {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+/* Miscellaneous */
+strong {
+  font-weight: bold;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+        
+        #header{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between
+        }
+        main{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin: auto
+        }
+        body{margin: auto}
+    </style>
+
+  </head>
+      <body class="c31 doc-content" >
+        <main id="pdf-content">
+            <section id="header">
+                <div style="display: flex; flex-direction: column; margin: auto;">
+                  <strong class="c16" id="name" style="font-size: x-large;">{data.name}</strong>
+                  <p class="c16" id="role">{data.role}</p>
+                </div>
+                <div style="display: flex; flex-direction: column;">
+                  <p class="c8" id="phone">{data.contact.phone}</p>
+                  <p class="c8" id="timezone">{data.contact.timezone}</p>
+                  <p class="c11" id="github"><a href="{data.contact.github}">{data.contact.github}</a></p>
+                  <p class="c11" id="email"><a href="mailto:{data.contact.email}">{data.contact.email}</a></p>
+                  <p class="c11" id="linkedin"><a href="{data.contact.linkedin}">{data.contact.linkedin}</a></p>
+                </div>
+              </section>
+              <p class="c32"><span class="c13">PERFIL</span></p>
+              <p class="c39" id="profile">{data.profile}</p>
+            
+              <p class="c3"><span class="c19 c13">PROYECTOS</span></p>
+              <div id="projects">
+                {data.projects.map(project => (
+                  <div>
+                    <p class="c3"><span class="c22"><a class="c2" href="{project.link}">{project.name}</a></span><span class="c5">| </span><span class="c19 c13"> - {project.role}</span></p>
+                    <ul class="c23">
+                      <li><span>{project.description}</span></li>
+                      <li><span><strong>Tecnologías:</strong> {project.technologies}</span></li>
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            
+              <p class="c3"><span class="c13">Tecnologías</span></p>
+              <p class="c39" id="technologies">{data.technologies}</p>
+            
+              <p class="c3"><span class="c19 c13">EXPERIENCIA</span></p>
+              <div id="experience">
+                {data.experience.map(job => (
+                  <div>
+                    <p class="c0"><span class="c4">{job.company} - {job.location} | {job.years}</span></p>
+                    <li class="c0"><span>{job.description}</span></p>
+                  </div>
+                ))}
+              </div>
+            
+              <p class="c3"><span class="c13 c44">EDUCACIÓN</span></p>
+              <p class="c0" id="education">{data.education}</p>
+        </main>
+       
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+        <script>
+            // Función para generar y descargar el PDF
+            const generatePDF = () => {
+                const element = document.getElementById('pdf-content');
+                html2pdf()
+                    .from(element)
+                    .save('BrianPadilla.pdf');
+            };
+        
+            // Generar el PDF al cargar la página
+            window.onload = () => {
+                generatePDF();
+            };
+        </script>
+      </body>
+ 
+    </html>

@@ -1,5 +1,9 @@
 ---
-const currentYear = new Date().getFullYear()
+// Importar el archivo JSON
+import cv from 'public/cv.json';
+
+// Obtener el año actual
+const currentYear = new Date().getFullYear();
 ---
 
 <footer
@@ -10,7 +14,7 @@ const currentYear = new Date().getFullYear()
   >
     <span class="text-sm sm:text-center text-zinc-800/90 dark:text-zinc-200/90"
       >© {currentYear}
-      <a href="https://midu.dev/" class="hover:underline">midudev</a>. Casi
+      <a href={cv.footer.websiteUrl} class="hover:underline">{cv.footer.name}</a>. Casi
       todos los derechos reservados
     </span>
     <ul
@@ -20,7 +24,7 @@ const currentYear = new Date().getFullYear()
         <a href="/#sobre-mi" class="hover:underline me-4 md:me-6">Sobre mí</a>
       </li>
       <li>
-        <a id="contacto" href="mailto:miduga@gmail.com" class="hover:underline"
+        <a id="contacto" href={`mailto:${cv.footer.contactEmail}`} class="hover:underline"
           >Contacto</a
         >
       </li>
