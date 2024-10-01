@@ -27,7 +27,7 @@
     "imageSrc": "/me.jpg",
     "linkedInUrl": "https://www.linkedin.com/in/brianpadilla01",
     "email": "brianpadilla.work@gmail.com",
-    "description": "+15 años de experiencia. Ingeniero de Software y Creador de Contenido sobre Programación de Barcelona, España 🇪🇸. Especializado en el desarrollo de aplicaciones web únicas.",
+    "description": "Soy Brian Padilla, un desarrollador backend capacitado en la creación de aplicaciones robustas y escalables utilizando tecnologías como NestJS, PostgreSQL y React Native. Mi enfoque está en ofrecer soluciones eficientes y seguras, optimizando siempre la experiencia del usuario final.",
     "badgeText": "Disponible para trabajar"
   },
   "aboutme": {
@@ -38,9 +38,10 @@
     "personalImageAlt": "Brian Padilla",
     "profile": "Fullstack developer con experiencia en JavaScript. Dominio de librerías/frameworks como React, NodeJS, jest entre otras tecnologías.",
     "bio": [
-      "Me llamo Miguel Ángel pero mis amigos me llaman midu. Empecé en la programación con un Amstrad, tenía 10 años. Actualmente estoy liderando equipos de desarrollo en multinacionales.",
-      "Algunos de mis éxitos incluyen colaborar con Mozilla para el desarrollo de las primeras apps en su sistema FirefoxOS. Aunque hoy está desaparecido fue un gran avance en el mundo del desarrollo web.",
-      "Como creador de contenido, cuento con el canal de habla hispana más visto del mundo en la categoría de Software & Game Development en Twitch. Mi objetivo es mejorar la empleabilidad de la comunidad hispana y el acceso a contenido de calidad."
+      "Hola, soy Brian Padilla, un desarrollador backend apasionado por crear aplicaciones tanto para la web móvil como para servidores. Me especializo en tecnologías como NestJS, Next.js y React Native, y disfruto explorar nuevas herramientas que enriquezcan mis proyectos. A lo largo de mi carrera, he liderado proyectos complejos en el ámbito del comercio electrónico, donde he tenido la oportunidad de dejar mi huella.",
+      "Uno de mis proyectos involucró la integración de funcionalidades avanzadas, como la autenticación segura mediante JWT y la gestión de carritos de compra. Este desafío no solo me permitió optimizar la experiencia del usuario, sino que también me enseñó el valor de crear sistemas seguros y confiables. Mi experiencia se extiende a la implementación de microservicios, lo que me ha permitido construir arquitecturas escalables y eficientes que se adaptan a las necesidades cambiantes de los negocios.",
+      "Además, me apasiona contribuir a la comunidad de desarrollo, y actualmente participo en una librería open source de frontend enfocada en HTML semántico. Este esfuerzo me permite colaborar con otros desarrolladores y aprender de sus experiencias. Me entusiasma aprender y enseñar; por eso, comparto contenido sobre desarrollo de software en mis redes sociales. También estoy estudiando una tecnicatura en programación, lo que me permite profundizar mis conocimientos y mantenerme al tanto de las últimas tendencias y tecnologías en el campo.",
+      "¡Estoy emocionado por las oportunidades que el futuro me depara y por la posibilidad de contribuir a proyectos innovadores que marquen la diferencia!✨🚀"
     ],
     "education": "Henry Bootcamp",
     "technologies": "React Native | NodeJS | Express | JWT | C++ | PHP | Jest | React | Vite | NextJS | Nest | Git | GitHub | Postman | Photoshop | Tailwind | Leaflet | ElectronJS | Java | Pascal | HTML | CSS | Firebase | Bootstrap"
