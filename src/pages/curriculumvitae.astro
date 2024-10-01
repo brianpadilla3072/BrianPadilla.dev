@@ -1,50 +1,51 @@
 ---
 // En tu componente o archivo de script
+import data from 'public/cv.json'; // Asegúrate de ajustar la ruta según tu estructura
 
-const data = {
-  name: "Brian Padilla",
-  role: "Desarrollador Full-Stack",
-  contact: {
-    phone: "(+54) 291 437 7615",
-    timezone: "(GMT-3) Argentina",
-    github: "https://github.com/brianpadilla3072",
-    email: "brianpadilla.work@gmail.com",
-    linkedin: "https://www.linkedin.com/in/brianpadilla01/",
-  },
-  profile: "Fullstack developer con experiencia en JavaScript. Dominio de librerías/frameworks como React, NodeJS, jest entre otras tecnologías.",
-  projects: [
-    {
-      name: "Dios Nuestro Padre - Aplicación para la Iglesia DNP",
-      link: "https://github.com/brianpadilla3072/client-dnp-app",
-      description: "Desarrollé la aplicación con el objetivo de proporcionar a los miembros de la iglesia acceso rápido y fácil a devocionales, fechas importantes y funcionalidades de perfil.",
-      technologies: "React Native | React | Express | SQLite | Swagger | JWT",
-      role: "fullStack",
-    },
-    {
-      name: "Experiencias culinarias",
-      link: "https://pryback-10xh.onrender.com/apidoc",
-      description: "Acerca chefs con sus comensales para que pueda establecer eventos de no más de 8 personas con localización, el comensal puede reservar una experiencia culinaria con Stripe.",
-      technologies: "Nestjs | typescript | prisma | postgres | auth0 | jwt | cloudinary | nodemailer | stripe",
-      role: "Backend",
-    },
-  ],
-  technologies: "React Native | NodeJS | Express | JWT | C++ | PHP | Jest | React | Vite | NextJS | Nest | Git | GitHub | Postman | Photoshop | Tailwind | Leaflet | ElectronJS | Java | Pascal | HTML | CSS | Firebase | Bootstrap",
-  experience: [
-    {
-      company: "Cámara Junior Internacional",
-      location: "Bahia Blanca, Argentina",
-      years: "2021 - 2023",
-      description: "Contribuí activamente en la selección y clasificación de los participantes en diversas categorías.",
-    },
-    {
-      company: "Kheiron",
-      location: "Palmira, Valle del Cauca, Colombia",
-      years: "2024",
-      description: "Desarrollo de KheironUI, una biblioteca de componentes de interfaz de usuario.",
-    },
-  ],
-  education: "Henry Bootcamp",
-};
+// const data = {
+//   name: "Brian Padilla",
+//   role: "Desarrollador Full-Stack",
+//   contact: {
+//     phone: "(+54) 291 437 7615",
+//     timezone: "(GMT-3) Argentina",
+//     github: "https://github.com/brianpadilla3072",
+//     email: "brianpadilla.work@gmail.com",
+//     linkedin: "https://www.linkedin.com/in/brianpadilla01/",
+//   },
+//   profile: "Fullstack developer con experiencia en JavaScript. Dominio de librerías/frameworks como React, NodeJS, jest entre otras tecnologías.",
+//   projects: [
+//     {
+//       name: "Dios Nuestro Padre - Aplicación para la Iglesia DNP",
+//       link: "https://github.com/brianpadilla3072/client-dnp-app",
+//       description: "Desarrollé la aplicación con el objetivo de proporcionar a los miembros de la iglesia acceso rápido y fácil a devocionales, fechas importantes y funcionalidades de perfil.",
+//       technologies: "React Native | React | Express | SQLite | Swagger | JWT",
+//       role: "fullStack",
+//     },
+//     {
+//       name: "Experiencias culinarias",
+//       link: "https://pryback-10xh.onrender.com/apidoc",
+//       description: "Acerca chefs con sus comensales para que pueda establecer eventos de no más de 8 personas con localización, el comensal puede reservar una experiencia culinaria con Stripe.",
+//       technologies: "Nestjs | typescript | prisma | postgres | auth0 | jwt | cloudinary | nodemailer | stripe",
+//       role: "Backend",
+//     },
+//   ],
+//   technologies: "React Native | NodeJS | Express | JWT | C++ | PHP | Jest | React | Vite | NextJS | Nest | Git | GitHub | Postman | Photoshop | Tailwind | Leaflet | ElectronJS | Java | Pascal | HTML | CSS | Firebase | Bootstrap",
+//   experience: [
+//     {
+//       company: "Cámara Junior Internacional",
+//       location: "Bahia Blanca, Argentina",
+//       years: "2021 - 2023",
+//       description: "Contribuí activamente en la selección y clasificación de los participantes en diversas categorías.",
+//     },
+//     {
+//       company: "Kheiron",
+//       location: "Palmira, Valle del Cauca, Colombia",
+//       years: "2024",
+//       description: "Desarrollo de KheironUI, una biblioteca de componentes de interfaz de usuario.",
+//     },
+//   ],
+//   education: "Henry Bootcamp",
+// };
 ---
 
 <!DOCTYPE html>
@@ -171,8 +172,8 @@ const data = {
     <main id="pdf-content">
         <section id="header">
             <div style="display: flex; flex-direction: column; margin: auto;">
-                <strong class="c16" id="name" style="font-size: x-large;">{data.name}</strong>
-                <p class="c16" id="role">{data.role}</p>
+                <strong class="c16" id="name" style="font-size: x-large;">{data.aboutme.name}</strong>
+                <p class="c16" id="role">{data.aboutme.role}</p>
             </div>
             <div style="display: flex; flex-direction: column;">
                 <p class="c8" id="phone">{data.contact.phone}</p>
@@ -183,14 +184,14 @@ const data = {
             </div>
         </section>
         <p class="c32"><span class="c13">PERFIL</span></p>
-        <p class="c39" id="profile">{data.profile}</p>
+        <p class="c39" id="profile">{data.aboutme.profile}</p>
 
         <p class="c3"><span class="c19 c13">PROYECTOS</span></p>
         <div id="projects">
-            {data.projects.map(project => (
+            {data.PROJECTS.map(project => (
                 <div>
                     <p class="c3">
-                        <span class="c22"><a class="c2" href="{project.link}">{project.name}</a></span>
+                        <span class="c22"><a class="c2" href="{project.link}">{project.title}</a></span>
                         <span class="c5">| </span>
                         <span class="c19 c13"> - {project.role}</span>
                     </p>
@@ -203,11 +204,11 @@ const data = {
         </div>
 
         <p class="c3"><span class="c13">Tecnologías</span></p>
-        <p class="c39" id="technologies">{data.technologies}</p>
+        <p class="c39" id="technologies">{data.aboutme.technologies}</p>
 
         <p class="c3"><span class="c19 c13">EXPERIENCIA</span></p>
         <div id="experience">
-            {data.experience.map(job => (
+            {data.EXPERIENCE.map(job => (
                 <div>
                     <p class="c0"><span class="c4">{job.company} - {job.location} | {job.years}</span></p>
                     <li class="c0"><span>{job.description}</span></li>
@@ -216,7 +217,7 @@ const data = {
         </div>
 
         <p class="c3"><span class="c13 c44">EDUCACIÓN</span></p>
-        <p class="c0" id="education">{data.education}</p>
+        <p class="c0" id="education">{data.aboutme.education}</p>
     </main>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>

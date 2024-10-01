@@ -1,19 +1,4 @@
 {
-  "EXPERIENCE": [
-    {
-      "date": "Actualmente...",
-      "title": "Creador de Contenido",
-      "company": "Twitch",
-      "description": "Divulgo sobre programación y desarrollo web en diferentes plataformas. Galardonado como mejor creador de contenido de habla no-inglesa en 2022 y mejor comunidad en 2023 por GitHub.",
-      "link": "https://twitch.tv/midudev"
-    },
-    {
-      "date": "Septiembre 2022",
-      "title": "Principal Frontend Engineer",
-      "company": "Adevinta Spain",
-      "description": "Responsable de la plataforma, componentes y utilidades para la creación y desarrollo de aplicaciones web. Mejora de un 30% en la entrega de software. Implantación de medidas de integración continua y despliegue con A/B testing en más de 15 equipos."
-    }
-  ],
   "navItems": [
     {
       "title": "Experiencia",
@@ -36,29 +21,6 @@
       "url": "mailto:miduga@gmail.com"
     }
   ],
-  "PROJECTS": [
-    {
-      "title": "SVGL - A beautiful library with SVG logos",
-      "description": "Biblioteca de logos SVG de las marcas más populares. +10k visitas al mes. +2K svgs descargados. Creado desde cero con Next.js, React y Tailwind CSS.",
-      "link": "https://svgl.vercel.app/",
-      "github": "https://github.com/pheralb/svgl",
-      "image": "/projects/svgl.webp",
-      "tags": [
-        "TAGS.NEXT",
-        "TAGS.TAILWIND"
-      ]
-    },
-    {
-      "title": "AdventJS - Retos de programación con JavaScript y TypeScript",
-      "description": "Plataforma gratuita con retos de programación. Más de 1 millón de visitas en un mes. +50K retos completados. Creada desde cero con Next.js, React y Tailwind CSS.",
-      "link": "https://adventjs.dev",
-      "image": "/projects/adventjs.webp",
-      "tags": [
-        "TAGS.NEXT",
-        " TAGS.TAILWIND"
-      ]
-    }
-  ],
   "personalData": {
     "name": "Brian Padilla",
     "personalImageAlt": "Brian Padilla",
@@ -70,18 +32,78 @@
   },
   "aboutme": {
     "name": "Brian Padilla",
+    "role": "Desarrollador Full-Stack",
     "nickname": "brian",
     "imageSrc": "/me.jpg",
     "personalImageAlt": "Brian Padilla",
+    "profile": "Fullstack developer con experiencia en JavaScript. Dominio de librerías/frameworks como React, NodeJS, jest entre otras tecnologías.",
     "bio": [
       "Me llamo Miguel Ángel pero mis amigos me llaman midu. Empecé en la programación con un Amstrad, tenía 10 años. Actualmente estoy liderando equipos de desarrollo en multinacionales.",
       "Algunos de mis éxitos incluyen colaborar con Mozilla para el desarrollo de las primeras apps en su sistema FirefoxOS. Aunque hoy está desaparecido fue un gran avance en el mundo del desarrollo web.",
       "Como creador de contenido, cuento con el canal de habla hispana más visto del mundo en la categoría de Software & Game Development en Twitch. Mi objetivo es mejorar la empleabilidad de la comunidad hispana y el acceso a contenido de calidad."
-    ]
+    ],
+    "education": "Henry Bootcamp",
+    "technologies": "React Native | NodeJS | Express | JWT | C++ | PHP | Jest | React | Vite | NextJS | Nest | Git | GitHub | Postman | Photoshop | Tailwind | Leaflet | ElectronJS | Java | Pascal | HTML | CSS | Firebase | Bootstrap"
   },
   "footer": {
     "name": "midudev",
     "contactEmail": "miduga@gmail.com",
     "websiteUrl": "https://midu.dev/"
-  }
+  },
+  "contact": {
+    "phone": "(+54) 291 437 7615",
+    "timezone": "(GMT-3) Argentina",
+    "github": "https://github.com/brianpadilla3072",
+    "email": "brianpadilla.work@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/brianpadilla01/"
+  },
+  "PROJECTS": [
+    {
+      "title": "Experiencias culinarias",
+      "link": "https://pryback-10xh.onrender.com/apidoc",
+      "description": "Acerca chefs con sus comensales para que pueda establecer eventos de no más de 8 personas con localización, el comensal puede reservar una experiencia culinaria con Stripe.",
+      "technologies": "Nestjs | typescript | prisma | postgres | auth0 | jwt | cloudinary | nodemailer | stripe",
+      "github": "https://github.com/pheralb/svgl",
+      "image": "/projects/svgl.webp",
+      "tags": [
+        "TAGS.NEXT",
+        "TAGS.TAILWIND,TAGS.REACT"
+      ],
+      "role": "Backend"
+    },
+    {
+      "title": "Dios Nuestro Padre - Aplicación para la Iglesia DNP",
+      "link": "https://github.com/brianpadilla3072/client-dnp-app",
+      "description": "Desarrollé la aplicación con el objetivo de proporcionar a los miembros de la iglesia acceso rápido y fácil a devocionales, fechas importantes y funcionalidades de perfil.",
+      "technologies": "React Native | React | Express | SQLite | Swagger | JWT",
+      "github": "https://github.com/pheralb/svgl",
+      "image": "/projects/svgl.webp",
+      "tags": [
+        "TAGS.NEXT",
+        "TAGS.TAILWIND"
+      ],
+      "role": "fullStack"
+    }
+  ],
+  
+  "EXPERIENCE": [
+    {
+      "company": "Cámara Junior Internacional",
+      "location": "Bahia Blanca, Argentina",
+      "years": "2021 - 2023",
+      "description": "Contribuí activamente en la selección y clasificación de los participantes en diversas categorías.",
+      "date": "2021-2023",
+      "title": "Creador de Contenido",
+      "link": "https://twitch.tv/midudev"
+    },
+    {
+      "company": "Kheiron",
+      "location": "Palmira, Valle del Cauca, Colombia",
+      "years": "2024",
+      "description": "Desarrollo de KheironUI, una biblioteca de componentes de interfaz de usuario.",
+      "date": "Actualmente...",
+      "title": "FrontEnd",
+      "link": "https://twitch.tv/midudev"
+    }
+  ]
 }

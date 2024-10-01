@@ -4,12 +4,128 @@ import NextJS from "./icons/NextJS.astro"
 import Tailwind from "./icons/Tailwind.astro"
 import Link from "./icons/Link.astro"
 import LinkButton from "./LinkButton.astro"
+import ReactJS from "./icons/ReactJS.astro"
 
 // Importamos el archivo JSON
 const data = await import('public/cv.json');
 
 // Definimos los TAGS como antes
 const TAGS = {
+  REACT: {
+    name: "React",
+    class: "bg-blue-600 text-white",
+    icon: ReactJS, // Asegúrate de tener un icono para React
+  },
+  // REACT_NATIVE: {
+  //   name: "React Native",
+  //   class: "bg-blue-800 text-white",
+  //   icon: ReactNativeIcon, // Asegúrate de tener un icono para React Native
+  // },
+  // NODEJS: {
+  //   name: "Node.js",
+  //   class: "bg-green-600 text-white",
+  //   icon: NodeJSIcon, // Asegúrate de tener un icono para Node.js
+  // },
+  // EXPRESS: {
+  //   name: "Express",
+  //   class: "bg-gray-800 text-white",
+  //   icon: ExpressIcon, // Asegúrate de tener un icono para Express
+  // },
+  // JWT: {
+  //   name: "JWT",
+  //   class: "bg-yellow-600 text-white",
+  //   icon: JWTIcon, // Asegúrate de tener un icono para JWT
+  // },
+  // CPP: {
+  //   name: "C++",
+  //   class: "bg-blue-500 text-white",
+  //   icon: CPPIcon, // Asegúrate de tener un icono para C++
+  // },
+  // PHP: {
+  //   name: "PHP",
+  //   class: "bg-blue-700 text-white",
+  //   icon: PHPIcon, // Asegúrate de tener un icono para PHP
+  // },
+  // JEST: {
+  //   name: "Jest",
+  //   class: "bg-purple-600 text-white",
+  //   icon: JestIcon, // Asegúrate de tener un icono para Jest
+  // },
+  // VITE: {
+  //   name: "Vite",
+  //   class: "bg-orange-500 text-white",
+  //   icon: ViteIcon, // Asegúrate de tener un icono para Vite
+  // },
+  // NEXTJS: {
+  //   name: "Next.js",
+  //   class: "bg-black text-white",
+  //   icon: NextJSIcon, // Asegúrate de tener un icono para Next.js
+  // },
+  // NEST: {
+  //   name: "NestJS",
+  //   class: "bg-red-600 text-white",
+  //   icon: NestJSIcon, // Asegúrate de tener un icono para NestJS
+  // },
+  // GIT: {
+  //   name: "Git",
+  //   class: "bg-orange-600 text-white",
+  //   icon: GitIcon, // Asegúrate de tener un icono para Git
+  // },
+  // GITHUB: {
+  //   name: "GitHub",
+  //   class: "bg-black text-white",
+  //   icon: GitHubIcon, // Asegúrate de tener un icono para GitHub
+  // },
+  // POSTMAN: {
+  //   name: "Postman",
+  //   class: "bg-orange-400 text-white",
+  //   icon: PostmanIcon, // Asegúrate de tener un icono para Postman
+  // },
+  // PHOTOSHOP: {
+  //   name: "Photoshop",
+  //   class: "bg-blue-500 text-white",
+  //   icon: PhotoshopIcon, // Asegúrate de tener un icono para Photoshop
+  // },
+  // LEAFLET: {
+  //   name: "Leaflet",
+  //   class: "bg-green-700 text-white",
+  //   icon: LeafletIcon, // Asegúrate de tener un icono para Leaflet
+  // },
+  // ELECTRONJS: {
+  //   name: "Electron.js",
+  //   class: "bg-gray-800 text-white",
+  //   icon: ElectronJSIcon, // Asegúrate de tener un icono para Electron.js
+  // },
+  // JAVA: {
+  //   name: "Java",
+  //   class: "bg-red-600 text-white",
+  //   icon: JavaIcon, // Asegúrate de tener un icono para Java
+  // },
+  // PASCAL: {
+  //   name: "Pascal",
+  //   class: "bg-blue-600 text-white",
+  //   icon: PascalIcon, // Asegúrate de tener un icono para Pascal
+  // },
+  // HTML: {
+  //   name: "HTML",
+  //   class: "bg-orange-400 text-white",
+  //   icon: HTMLIcon, // Asegúrate de tener un icono para HTML
+  // },
+  // CSS: {
+  //   name: "CSS",
+  //   class: "bg-blue-600 text-white",
+  //   icon: CSSIcon, // Asegúrate de tener un icono para CSS
+  // },
+  // FIREBASE: {
+  //   name: "Firebase",
+  //   class: "bg-orange-500 text-white",
+  //   icon: FirebaseIcon, // Asegúrate de tener un icono para Firebase
+  // },
+  // BOOTSTRAP: {
+  //   name: "Bootstrap",
+  //   class: "bg-primary text-white",
+  //   icon: BootstrapIcon, // Asegúrate de tener un icono para Bootstrap
+  // },
   NEXT: {
     name: "Next.js",
     class: "bg-black text-white",
