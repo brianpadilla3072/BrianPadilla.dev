@@ -61,11 +61,11 @@
   "PROJECTS": [
     {
       "title": "Experiencias culinarias",
-      "link": "https://pryback-10xh.onrender.com/apidoc",
+      "link": "https://frontdeploy.vercel.app",
       "description": "Acerca chefs con sus comensales para que pueda establecer eventos de no más de 8 personas con localización, el comensal puede reservar una experiencia culinaria con Stripe.",
       "technologies": "Nestjs | typescript | prisma | postgres | auth0 | jwt | cloudinary | nodemailer | stripe",
       "github": "https://github.com/ottorst/pryback",
-      "image": "/projects/svgl.webp",
+      "image": "/projects/gourmet-affair.jpg",
       "tags": [
         "TAGS.NEXT",
         "TAGS.TAILWIND","TAGS.NODEJS"
@@ -78,22 +78,14 @@
       "description": "Desarrollé la aplicación con el objetivo de proporcionar a los miembros de la iglesia acceso rápido y fácil a devocionales, fechas importantes y funcionalidades de perfil.",
       "technologies": "React Native | React | Express | SQLite | Swagger | JWT",
       "github": "https://github.com/brianpadilla3072/client-dnp-app",
-      "image": "/projects/svgl.webp",
+      "image": "https://raw.githubusercontent.com/brianpadilla3072/brianpadilla3072/main/diosnuestropadre.jpg",
       "tags": ["TAGS.REACT_NATIVE"],
       "role": "fullStack"
     }
   ],
   
   "EXPERIENCE": [
-    {
-      "company": "Cámara Junior Internacional",
-      "location": "Bahia Blanca, Argentina",
-      "years": "2021 - 2023",
-      "description": "Contribuí activamente en la selección y clasificación de los participantes en diversas categorías.",
-      "date": "2021-2023",
-      "title": "Creador de Contenido",
-      "link": "https://twitch.tv/midudev"
-    },
+   
     {
       "company": "Kheiron",
       "location": "Palmira, Valle del Cauca, Colombia",
@@ -101,6 +93,15 @@
       "description": "Desarrollo de KheironUI, una biblioteca de componentes de interfaz de usuario.",
       "date": "Actualmente...",
       "title": "FrontEnd",
+      "link": "https://twitch.tv/midudev"
+    },
+     {
+      "company": "Cámara Junior Internacional",
+      "location": "Bahia Blanca, Argentina",
+      "years": "2021 - 2023",
+      "description": "Contribuí activamente en la selección y clasificación de los participantes en diversas categorías.",
+      "date": "2021-2023",
+      "title": "Creador de Contenido",
       "link": "https://twitch.tv/midudev"
     }
   ]
