@@ -5,6 +5,10 @@ import Tailwind from "./icons/Tailwind.astro"
 import Link from "./icons/Link.astro"
 import LinkButton from "./LinkButton.astro"
 import ReactJS from "./icons/ReactJS.astro"
+import ReactNative from "./icons/ReactNative.astro"
+import NodeJS from "./icons/NodeJS.astro"
+
+import Express from "./icons/Express.astro"
 
 // Importamos el archivo JSON
 const data = await import('public/cv.json');
@@ -13,24 +17,24 @@ const data = await import('public/cv.json');
 const TAGS = {
   REACT: {
     name: "React",
-    class: "bg-blue-600 text-white",
+    class: "bg-slate-900 text-white",
     icon: ReactJS, // Asegúrate de tener un icono para React
   },
-  // REACT_NATIVE: {
-  //   name: "React Native",
-  //   class: "bg-blue-800 text-white",
-  //   icon: ReactNativeIcon, // Asegúrate de tener un icono para React Native
-  // },
-  // NODEJS: {
-  //   name: "Node.js",
-  //   class: "bg-green-600 text-white",
-  //   icon: NodeJSIcon, // Asegúrate de tener un icono para Node.js
-  // },
-  // EXPRESS: {
-  //   name: "Express",
-  //   class: "bg-gray-800 text-white",
-  //   icon: ExpressIcon, // Asegúrate de tener un icono para Express
-  // },
+  REACT_NATIVE: {
+    name: "React Native",
+    class: "bg-slate-900 text-white",
+    icon: ReactNative, // Asegúrate de tener un icono para React Native
+  },
+  NODEJS: {
+    name: "Node.js",
+    class: "bg-zinc-50 text-black",
+    icon: NodeJS, // Asegúrate de tener un icono para Node.js
+  },
+  EXPRESS: {
+    name: "Express",
+    class: "bg-zinc-50 text-black",
+    icon: Express, // Asegúrate de tener un icono para Express
+  },
   // JWT: {
   //   name: "JWT",
   //   class: "bg-yellow-600 text-white",
