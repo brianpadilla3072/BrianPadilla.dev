@@ -10,6 +10,7 @@ import Projects from "@/components/Projects.astro"
 import SectionContainer from "@/components/SectionContainer.astro"
 import Hero from "@/components/Hero.astro"
 import TitleSection from "@/components/TitleSection.astro"
+import ButtonLink from "@/components/ButtonLink.astro"
 ---
 
 <Layout
@@ -32,10 +33,15 @@ import TitleSection from "@/components/TitleSection.astro"
     </SectionContainer>
 
     <SectionContainer id="proyectos">
-      <TitleSection>
-        <CodeIcon class="size-7" />
-        Proyectos
-      </TitleSection>
+      <div style="display: flex; flex-direction: row; justify-content: space-between;">
+
+        <TitleSection>
+          <CodeIcon class="size-7" />
+          Proyectos
+        </TitleSection>
+        <ButtonLink href="/Proyectos">Ver mas</ButtonLink>
+      </div>
+      
       <Projects />
     </SectionContainer>
 

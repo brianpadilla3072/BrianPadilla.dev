@@ -5,7 +5,11 @@
     "paths": {
       "@/*": [
         "src/*"
-      ]
-    }
+      ],
+    },
+    "strict": true,
+    "jsx": "react-jsx",  // Añade esta línea
+    "target": "ESNext",   // Opcional: puedes especificar el estándar de JavaScript
+    "module": "ESNext"    // Opcional: puedes especificar el módulo a usar
   }
 }

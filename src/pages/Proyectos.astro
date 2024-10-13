@@ -1,0 +1,162 @@
+---
+import Express from '@/components/icons/Express.astro';
+import NodeJS from '@/components/icons/NodeJS.astro';
+import NextJS from '@/components/icons/NextJS.astro';
+import ReactJS from '@/components/icons/ReactJS.astro';
+import ReactNative from '@/components/icons/ReactNative.astro';
+import Tailwind from '@/components/icons/Tailwind.astro';
+import SectionContainer from '@/components/SectionContainer.astro';
+import TitleSection from '@/components/TitleSection.astro';
+import Layout from '@/layouts/Layout.astro';
+import LinkButton from '@/components/LinkButton.astro';
+import Link from '@/components/icons/Link.astro';
+import CodeIcon from '@/components/icons/Code.astro';
+import GitHub from '@/components/icons/GitHub.astro';
+
+// Importamos el archivo JSON
+const data = await import('public/cv.json');
+
+// Definimos los TAGS
+const TAGS = {
+  REACT: {
+    name: "React",
+    class: "bg-slate-900 text-white",
+    icon: ReactJS,
+  },
+  REACT_NATIVE: {
+    name: "React Native",
+    class: "bg-slate-900 text-white",
+    icon: ReactNative,
+  },
+  NODEJS: {
+    name: "Node.js",
+    class: "bg-zinc-50 text-black",
+    icon: NodeJS,
+  },
+  EXPRESS: {
+    name: "Express",
+    class: "bg-zinc-50 text-black",
+    icon: Express,
+  },
+  NEXT: {
+    name: "Next.js",
+    class: "bg-black text-white",
+    icon: NextJS,
+  },
+  TAILWIND: {
+    name: "Tailwind CSS",
+    class: "bg-[#003159] text-white",
+    icon: Tailwind,
+  },
+};
+
+// Usamos el archivo JSON para definir los proyectos
+const PROJECTS = data.PROJECTS.map((project) => ({
+  ...project,
+  tags: project.tags.map((tag) => {
+    const tagKey = tag.replace("TAGS.", "") as keyof typeof TAGS;
+    return TAGS[tagKey] ? TAGS[tagKey] : null; // Verifica si la clave existe en TAGS
+  }).filter(Boolean), // Filtra los valores null
+}));
+---
+
+
+<Layout title="Proyectos" description="Esta página contiene todos los proyectos">
+  <SectionContainer id="proyectos">
+    <div style="display: flex; flex-direction: row; justify-content: space-between; margin-top:3rem; margin-bottom:2rem">
+      <TitleSection>
+        <CodeIcon class="size-7" />
+        Proyectos
+      </TitleSection>
+      <div class="relative w-full sm:w-64">
+        <input
+          id="search-input"
+          type="text"
+          placeholder="Buscar proyectos..."
+          class="bg-white/10 rounded-full py-2 px-4 pr-10 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+        <svg xmlns="http://www.w3.org/2000/svg" class="absolute right-3 top-2.5 text-white/50" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+      </div>
+    </div>
+
+    <div class="flex flex-col gap-y-16">
+      {PROJECTS.map(({ image, title, description, tags, link, github }) => (
+        <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0 project">
+          <div class="w-full md:w-1/2">
+            <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+              <img alt={title} class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src={image} />
+            </div>
+          </div>
+    
+          <div class="w-full md:w-1/2 md:max-w-lg">
+            <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">{title}</h3>
+            <div class="flex flex-wrap mt-2">
+              <ul class="flex flex-row mb-2 gap-x-2">
+                {tags.map((tag) => (
+                  tag && (
+                    <li> 
+                      <span class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 technologies`}>
+                        <tag.icon class="size-4" />
+                        {tag.name}
+                      </span>
+                    </li>
+                  )
+                ))}
+              </ul>
+            </div>
+            <div class="mt-2 text-gray-700 dark:text-gray-400 description">{description}</div>
+            <footer class="flex items-end justify-start mt-4 gap-x-4">
+              {github && (
+                <LinkButton href={github}>
+                  <GitHub class="size-6" />
+                  Code
+                </LinkButton>
+              )}
+              {link && (
+                <LinkButton href={link}>
+                  <Link class="size-4" />
+                  Preview
+                </LinkButton>
+              )}
+            </footer>
+          </div>
+        </article>
+      ))}
+    </div>
+  </SectionContainer>
+  <script>
+    const filterProjects = (searchTerm: string) => {
+      const projectElements = document.querySelectorAll('.project');
+  
+      projectElements.forEach((project) => {
+        const titleElement = project.querySelector('h3');
+        const descriptionElement = project.querySelector('.description');
+        const technologiesElement = project.querySelector('.technologies');
+        
+        if (titleElement && descriptionElement && technologiesElement) {
+          const title = titleElement?.textContent?.toLowerCase()  ?? ''; 
+          const description = descriptionElement?.textContent?.toLowerCase()  ?? ''; 
+          const technologies = Array.from(technologiesElement.querySelectorAll('span')).map(span => span.textContent?.toLowerCase() ?? '').join(' ');
+          const projectElement = project as HTMLElement;
+          ; 
+
+          if (title.includes(searchTerm) || description.includes(searchTerm) || technologies.includes(searchTerm)) {
+            projectElement.style.display = ''; // Muestra el proyecto
+          } else {
+            projectElement.style.display = 'none'; // Oculta el proyecto
+          }
+        }
+      });
+    };
+  
+    document.addEventListener('DOMContentLoaded', () => {
+      const searchInput = document.getElementById('search-input');
+      if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+          const target = e.target as HTMLInputElement;
+          filterProjects(target.value.toLowerCase());
+        });
+      }
+    });
+  </script>
+</Layout>
