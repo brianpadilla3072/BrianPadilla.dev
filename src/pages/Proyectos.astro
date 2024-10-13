@@ -12,6 +12,7 @@ import LinkButton from '@/components/LinkButton.astro';
 import Link from '@/components/icons/Link.astro';
 import CodeIcon from '@/components/icons/Code.astro';
 import GitHub from '@/components/icons/GitHub.astro';
+import MyReactComponent from '@/components/MyReactComponent.jsx';
 
 // Importamos el archivo JSON
 const data = await import('public/cv.json');
@@ -143,18 +144,7 @@ const ITEMS_PER_PAGE = 4;
       </button>
     </div>
   </SectionContainer>
-  <script>
-    // Función para consumir el archivo JSON
-    async function fetchProjects() {
-      const response = await fetch('/cv.json');
-      const data = await response.json();
-      return data.PROJECTS
-      // Aquí puedes manipular los datos obtenidos según necesites
-    }
 
-    // Llamamos a la función para obtener los datos cuando se cargue la página
-    fetchProjects();
-   
-  </script>
+  <MyReactComponent client:load />
   
 </Layout>
