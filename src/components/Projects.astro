@@ -1,162 +1,21 @@
 ---
-import GitHub from "./icons/GitHub.astro"
-import NextJS from "./icons/NextJS.astro"
-import Tailwind from "./icons/Tailwind.astro"
-import Link from "./icons/Link.astro"
-import LinkButton from "./LinkButton.astro"
-import ReactJS from "./icons/ReactJS.astro"
-import ReactNative from "./icons/ReactNative.astro"
-import NodeJS from "./icons/NodeJS.astro"
+// Importaciones necesarias
+import GitHub from "./icons/GitHub";
+import Link from "./icons/Link";
+import LinkButton from "./LinkButton.astro";
+import TagsComponent from "./TagsComponents"; // Asegúrate de tener la ruta correcta para el nuevo componente
+import data from 'public/cv.json'; // Ajusta la importación de acuerdo a la estructura de tu proyecto
 
-import Express from "./icons/Express.astro"
-
-// Importamos el archivo JSON
-const data = await import('public/cv.json');
-
-// Definimos los TAGS como antes
-const TAGS = {
-  REACT: {
-    name: "React",
-    class: "bg-slate-900 text-white",
-    icon: ReactJS, // Asegúrate de tener un icono para React
-  },
-  REACT_NATIVE: {
-    name: "React Native",
-    class: "bg-slate-900 text-white",
-    icon: ReactNative, // Asegúrate de tener un icono para React Native
-  },
-  NODEJS: {
-    name: "Node.js",
-    class: "bg-zinc-50 text-black",
-    icon: NodeJS, // Asegúrate de tener un icono para Node.js
-  },
-  EXPRESS: {
-    name: "Express",
-    class: "bg-zinc-50 text-black",
-    icon: Express, // Asegúrate de tener un icono para Express
-  },
-  // JWT: {
-  //   name: "JWT",
-  //   class: "bg-yellow-600 text-white",
-  //   icon: JWTIcon, // Asegúrate de tener un icono para JWT
-  // },
-  // CPP: {
-  //   name: "C++",
-  //   class: "bg-blue-500 text-white",
-  //   icon: CPPIcon, // Asegúrate de tener un icono para C++
-  // },
-  // PHP: {
-  //   name: "PHP",
-  //   class: "bg-blue-700 text-white",
-  //   icon: PHPIcon, // Asegúrate de tener un icono para PHP
-  // },
-  // JEST: {
-  //   name: "Jest",
-  //   class: "bg-purple-600 text-white",
-  //   icon: JestIcon, // Asegúrate de tener un icono para Jest
-  // },
-  // VITE: {
-  //   name: "Vite",
-  //   class: "bg-orange-500 text-white",
-  //   icon: ViteIcon, // Asegúrate de tener un icono para Vite
-  // },
-  // NEXTJS: {
-  //   name: "Next.js",
-  //   class: "bg-black text-white",
-  //   icon: NextJSIcon, // Asegúrate de tener un icono para Next.js
-  // },
-  // NEST: {
-  //   name: "NestJS",
-  //   class: "bg-red-600 text-white",
-  //   icon: NestJSIcon, // Asegúrate de tener un icono para NestJS
-  // },
-  // GIT: {
-  //   name: "Git",
-  //   class: "bg-orange-600 text-white",
-  //   icon: GitIcon, // Asegúrate de tener un icono para Git
-  // },
-  // GITHUB: {
-  //   name: "GitHub",
-  //   class: "bg-black text-white",
-  //   icon: GitHubIcon, // Asegúrate de tener un icono para GitHub
-  // },
-  // POSTMAN: {
-  //   name: "Postman",
-  //   class: "bg-orange-400 text-white",
-  //   icon: PostmanIcon, // Asegúrate de tener un icono para Postman
-  // },
-  // PHOTOSHOP: {
-  //   name: "Photoshop",
-  //   class: "bg-blue-500 text-white",
-  //   icon: PhotoshopIcon, // Asegúrate de tener un icono para Photoshop
-  // },
-  // LEAFLET: {
-  //   name: "Leaflet",
-  //   class: "bg-green-700 text-white",
-  //   icon: LeafletIcon, // Asegúrate de tener un icono para Leaflet
-  // },
-  // ELECTRONJS: {
-  //   name: "Electron.js",
-  //   class: "bg-gray-800 text-white",
-  //   icon: ElectronJSIcon, // Asegúrate de tener un icono para Electron.js
-  // },
-  // JAVA: {
-  //   name: "Java",
-  //   class: "bg-red-600 text-white",
-  //   icon: JavaIcon, // Asegúrate de tener un icono para Java
-  // },
-  // PASCAL: {
-  //   name: "Pascal",
-  //   class: "bg-blue-600 text-white",
-  //   icon: PascalIcon, // Asegúrate de tener un icono para Pascal
-  // },
-  // HTML: {
-  //   name: "HTML",
-  //   class: "bg-orange-400 text-white",
-  //   icon: HTMLIcon, // Asegúrate de tener un icono para HTML
-  // },
-  // CSS: {
-  //   name: "CSS",
-  //   class: "bg-blue-600 text-white",
-  //   icon: CSSIcon, // Asegúrate de tener un icono para CSS
-  // },
-  // FIREBASE: {
-  //   name: "Firebase",
-  //   class: "bg-orange-500 text-white",
-  //   icon: FirebaseIcon, // Asegúrate de tener un icono para Firebase
-  // },
-  // BOOTSTRAP: {
-  //   name: "Bootstrap",
-  //   class: "bg-primary text-white",
-  //   icon: BootstrapIcon, // Asegúrate de tener un icono para Bootstrap
-  // },
-  NEXT: {
-    name: "Next.js",
-    class: "bg-black text-white",
-    icon: NextJS,
-  },
-  TAILWIND: {
-    name: "Tailwind CSS",
-    class: "bg-[#003159] text-white",
-    icon: Tailwind,
-  },
-};
-
-// Usamos el archivo JSON para definir los proyectos
 const PROJECTS = data.PROJECTS.map((project) => ({
   ...project,
-  tags: project.tags.map((tag: string) => {
-    const tagKey = tag.replace("TAGS.", "") as keyof typeof TAGS;
-    return TAGS[tagKey] ? TAGS[tagKey] : null; // Verifica si la clave existe en TAGS
-  })
+  tags: project.tags.map((tag) => tag.replace("TAGS.", "")), // Mantén solo las claves
 }));
 ---
-
 <div class="flex flex-col gap-y-16">
   {PROJECTS.map(({ image, title, description, tags, link, github }) => (
-    <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+    <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0" >
       <div class="w-full md:w-1/2">
-        <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+        <div class="relative flex flex-col items-center gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
           <img alt={title} class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src={image} />
         </div>
       </div>
@@ -164,31 +23,19 @@ const PROJECTS = data.PROJECTS.map((project) => ({
       <div class="w-full md:w-1/2 md:max-w-lg">
         <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">{title}</h3>
         <div class="flex flex-wrap mt-2">
-          <ul class="flex flex-row mb-2 gap-x-2">
-            {tags.map((tag) => (
-              tag && (  // Verificamos si 'tag' no es null
-                <li > 
-                  <span class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2`}>
-                    <tag.icon class="size-4" />
-                    {tag.name}
-                  </span>
-                </li>
-              )
-            ))}
-          </ul>
-
+          <TagsComponent tags={tags} /> 
         </div>
         <div class="mt-2 text-gray-700 dark:text-gray-400">{description}</div>
         <footer class="flex items-end justify-start mt-4 gap-x-4">
           {github && (
             <LinkButton href={github}>
-              <GitHub class="size-6" />
+              <GitHub className="size-6" />
               Code
             </LinkButton>
           )}
           {link && (
             <LinkButton href={link}>
-              <Link class="size-4" />
+              <Link className="size-4" />
               Preview
             </LinkButton>
           )}

@@ -1,11 +1,21 @@
 ---
 import Layout from '@/layouts/Layout.astro';
 import ListProyects from '@/components/ListProyects';
+import SectionContainer from "@/components/SectionContainer.astro"
+import TitleSection from "@/components/TitleSection.astro"
+import CodeIcon from "@/components/icons/Code"
+
 ---
 
  
     <Layout title="Proyectos" description="Esta página contiene todos los proyectos">
-      <ListProyects/>
+      <SectionContainer className="mt-8 pt-8" >
+        <TitleSection>
+          <CodeIcon class="size-7" />
+          Proyectos
+        </TitleSection>
+        <ListProyects client:load/>
+      <SectionContainer/>
     </Layout>
   
 

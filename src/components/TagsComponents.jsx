@@ -1,10 +1,10 @@
 import React from 'react';
-import ReactJS from '@/components/icons/ReactJS.astro';
-import ReactNative from '@/components/icons/ReactNative.astro';
-import NodeJS from '@/components/icons/NodeJS.astro';
-import Express from '@/components/icons/Express.astro';
-import NextJS from '@/components/icons/NextJS.astro';
-import Tailwind from '@/components/icons/Tailwind.astro';
+import ReactJS from './icons/ReactJS';
+import ReactNative from './icons/ReactNative';
+import NodeJS from './icons/NodeJS';
+import Express from './icons/Express';
+import NextJS from './icons/NextJS';
+import Tailwind from './icons/Tailwind';
 
 const TAGS = {
   REACT: {
@@ -48,9 +48,11 @@ const TagsComponent = ({ tags }) => {
         
         const Icon = tag.icon;
         return (
-          <li key={index} className={`flex items-center gap-2 rounded-full py-1 px-3 text-xs ${tag.class}`}>
-            <Icon className="w-4 h-4" />
-            <span>{tag.name}</span>
+          <li key={index} style={{display:'flex', alignItems: "center", justifyContent: "center"}} className={`flex items-center gap-2 rounded-full py-1 px-3 text-xs ${tag.class}`}>
+           
+            <Icon className={`w-6 h-4`} /> 
+            
+            <span >{tag.name}</span>
           </li>
         );
       })}

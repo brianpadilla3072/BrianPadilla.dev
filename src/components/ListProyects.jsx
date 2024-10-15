@@ -1,31 +1,42 @@
-import React, { useState } from 'react';
-import TagsComponent from './TagsComponents';
-import GitHub from 'components/icons/GitHub.astro';
-import Link from 'components/icons/Link.astro';
-import data from 'public/cv.json';
 
-const ProjectsComponent = () => {
+import { useState, useEffect } from 'react';
+import TagsComponent from './TagsComponents';
+import GitHub from './icons/GitHub';
+import Link from './icons/Link';
+const ListProyects = () => {
   const [searchTerm, setSearchTerm] = useState('');
-  
-  // Filtra los proyectos en base al término de búsqueda
-  const filteredProjects = data.PROJECTS.filter((project) =>
+  const [projects, setProjects] = useState([]);
+
+  // Carga el archivo JSON de manera dinámica
+  useEffect(() => {
+    fetch('/cv.json')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then(data => {
+        setProjects(data.PROJECTS);
+      })
+      .catch(error => console.error('Error al cargar el archivo JSON:', error));
+  }, []);
+
+  const filteredProjects = projects.filter((project) =>
     project.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
     project.description.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   return (
     <div className="section-container" id="proyectos">
-      <div className="flex justify-between mb-8">
-        <h2 className="text-2xl font-bold">Proyectos</h2>
-        <input
-          type="text"
-          placeholder="Buscar proyectos..."
-          className="bg-white/10 rounded-full py-2 px-4 pr-10 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-        />
-      </div>
-      <div className="flex flex-col gap-y-16">
+      <input
+        type="text"
+        placeholder="Buscar proyectos..."
+        className="bg-white/10 rounded-full py-2 px-4 pr-10 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+      />
+      <div className="flex mt-3 flex-col gap-y-16">
         {filteredProjects.map((project, index) => (
           <article key={index} className="flex flex-col space-y-8 md:flex-row md:space-x-8 project">
             <div className="w-full md:w-1/2">
@@ -55,4 +66,4 @@ const ProjectsComponent = () => {
   );
 };
 
-export default ProjectsComponent;
+export default ListProyects;
