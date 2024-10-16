@@ -2,17 +2,17 @@
 // Importaciones necesarias
 import GitHub from "./icons/GitHub";
 import Link from "./icons/Link";
-import LinkButton from "./LinkButton.astro";
+import LinkButton from "./LinkButton.jsx"
 import TagsComponent from "./TagsComponents"; // Asegúrate de tener la ruta correcta para el nuevo componente
 import data from 'public/cv.json'; // Ajusta la importación de acuerdo a la estructura de tu proyecto
 
-const PROJECTS = data.PROJECTS.map((project) => ({
+const PROJECTS = data.PROJECTS.map((project:any) => ({
   ...project,
-  tags: project.tags.map((tag) => tag.replace("TAGS.", "")), // Mantén solo las claves
+  tags: project.tags.map((tag:any) => tag.replace("TAGS.", "")), // Mantén solo las claves
 }));
 ---
 <div class="flex flex-col gap-y-16">
-  {PROJECTS.map(({ image, title, description, tags, link, github }) => (
+  {PROJECTS.map(({ image, title, description, tags, link, github }:any) => (
     <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0" >
       <div class="w-full md:w-1/2">
         <div class="relative flex flex-col items-center gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
