@@ -1,18 +1,18 @@
 ---
-import ThemeToggle from "./ThemeToggle.astro"
-import ButtonCv from "./ButtonCv.astro"
+import ThemeToggle from "./ThemeToggle.astro";
+import ButtonCv from "./ButtonCv"
+import MobileMenu from './MobileMenu.jsx'; // Importa el componente React
 
 import cv from 'public/cv.json'; // Asegúrate de ajustar la ruta según tu estructura
 
 const navItems = cv.navItems;
 ---
 
-<header
+<header 
   class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2"
 >
-  <nav
-    class="flex px-3 text-sm font-medium rounded-full text-gray-600 dark:text-gray-200 justify-center items-center"
-  >
+  <!-- Menú de Escritorio -->
+  <nav id="navDestock" class="flex px-3 text-sm font-medium rounded-full text-gray-600 dark:text-gray-200 justify-center items-center">
     {
       navItems.map((link) => (
         <a
@@ -24,9 +24,12 @@ const navItems = cv.navItems;
         </a>
       ))
     }
-    <ButtonCv/>
+    <ButtonCv />
     <ThemeToggle />
   </nav>
+  
+  <!-- Menú Móvil -->
+  <MobileMenu id="menuMovile" navItems={navItems}  client:load  />
 </header>
 
 <script>
@@ -35,10 +38,10 @@ const navItems = cv.navItems;
     const navItems = document.querySelectorAll("header nav a")
 
     const callback = (entries: any[]) => {
-      entries.forEach((entry) => {
+      entries.forEach((entry: { isIntersecting: any; target: { id: string | null } }) => {
         if (entry.isIntersecting) {
           navItems.forEach((item) => {
-            if (item.getAttribute("aria-label") == entry.target.id) {
+            if (item.getAttribute("aria-label") === entry.target.id) {
               item.classList.add("text-blue-500")
             } else {
               item.classList.remove("text-blue-500")
@@ -74,13 +77,15 @@ const navItems = cv.navItems;
 <style>
   nav {
     animation: nav-shadown 1s linear both;
-    animation-timeline: scroll();
-    animation-range: 0 100px;
-  }
-
-  nav {
     @apply dark:bg-gray-800/90 bg-white/50;
   }
+  
+  @media (max-width: 768px) {
+    #navDestock {
+      display: none;
+    }
+  }
+ZZZZZ
 
   @keyframes nav-shadown {
     0% {

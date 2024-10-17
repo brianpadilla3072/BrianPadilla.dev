@@ -2,50 +2,16 @@
 // En tu componente o archivo de script
 import data from 'public/cv.json'; // Asegúrate de ajustar la ruta según tu estructura
 
-// const data = {
-//   name: "Brian Padilla",
-//   role: "Desarrollador Full-Stack",
-//   contact: {
-//     phone: "(+54) 291 437 7615",
-//     timezone: "(GMT-3) Argentina",
-//     github: "https://github.com/brianpadilla3072",
-//     email: "brianpadilla.work@gmail.com",
-//     linkedin: "https://www.linkedin.com/in/brianpadilla01/",
-//   },
-//   profile: "Fullstack developer con experiencia en JavaScript. Dominio de librerías/frameworks como React, NodeJS, jest entre otras tecnologías.",
-//   projects: [
-//     {
-//       name: "Dios Nuestro Padre - Aplicación para la Iglesia DNP",
-//       link: "https://github.com/brianpadilla3072/client-dnp-app",
-//       description: "Desarrollé la aplicación con el objetivo de proporcionar a los miembros de la iglesia acceso rápido y fácil a devocionales, fechas importantes y funcionalidades de perfil.",
-//       technologies: "React Native | React | Express | SQLite | Swagger | JWT",
-//       role: "fullStack",
-//     },
-//     {
-//       name: "Experiencias culinarias",
-//       link: "https://pryback-10xh.onrender.com/apidoc",
-//       description: "Acerca chefs con sus comensales para que pueda establecer eventos de no más de 8 personas con localización, el comensal puede reservar una experiencia culinaria con Stripe.",
-//       technologies: "Nestjs | typescript | prisma | postgres | auth0 | jwt | cloudinary | nodemailer | stripe",
-//       role: "Backend",
-//     },
-//   ],
-//   technologies: "React Native | NodeJS | Express | JWT | C++ | PHP | Jest | React | Vite | NextJS | Nest | Git | GitHub | Postman | Photoshop | Tailwind | Leaflet | ElectronJS | Java | Pascal | HTML | CSS | Firebase | Bootstrap",
-//   experience: [
-//     {
-//       company: "Cámara Junior Internacional",
-//       location: "Bahia Blanca, Argentina",
-//       years: "2021 - 2023",
-//       description: "Contribuí activamente en la selección y clasificación de los participantes en diversas categorías.",
-//     },
-//     {
-//       company: "Kheiron",
-//       location: "Palmira, Valle del Cauca, Colombia",
-//       years: "2024",
-//       description: "Desarrollo de KheironUI, una biblioteca de componentes de interfaz de usuario.",
-//     },
-//   ],
-//   education: "Henry Bootcamp",
-// };
+const PROJECTS = data.PROJECTS
+  .filter((project) => project.featured) // Filtra los proyectos destacados
+  .map((project) => ({
+    ...project,
+    tags: project.tags.map((tag) => tag.replace("TAGS.", "")), // Mantén solo las claves
+  }))
+  .slice(0, 3); // Muestra solo los primeros tres
+  const EXPERIENCE = data.EXPERIENCE
+  .filter((job) => job.featured) // Filtra los proyectos destacados
+  .slice(0, 3); 
 ---
 
 <!DOCTYPE html>
@@ -189,7 +155,7 @@ import data from 'public/cv.json'; // Asegúrate de ajustar la ruta según tu es
 
         <p class="c3"><span class="c19 c13">PROYECTOS</span></p>
         <div id="projects">
-            {data.PROJECTS.map(project => (
+            {PROJECTS.map(project => (
                 <div>
                     <p class="c3">
                         <span class="c22"><a class="c2" href="{project.link}">{project.title}</a></span>
@@ -209,7 +175,7 @@ import data from 'public/cv.json'; // Asegúrate de ajustar la ruta según tu es
 
         <p class="c3"><span class="c19 c13">EXPERIENCIA</span></p>
         <div id="experience">
-            {data.EXPERIENCE.map(job => (
+            {EXPERIENCE.map(job => (
                 <div>
                     <p class="c0"><span class="c4">{job.company} - {job.location} | {job.years}</span></p>
                     <li class="c0"><span>{job.description}</span></li>

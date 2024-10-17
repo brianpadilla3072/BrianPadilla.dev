@@ -39,20 +39,21 @@ const TAGS = {
   },
 };
 
-const TagsComponent = ({ tags }) => {
+const TagsComponent = ({ tags, max = 0 }) => {
+  // Limit the number of tags if `max` is greater than zero
+  const visibleTags = max > 0 ? tags.slice(0, max) : tags;
+
   return (
     <ul className="flex flex-wrap gap-2">
-      {tags.map((tagKey, index) => {
+      {visibleTags.map((tagKey, index) => {
         const tag = TAGS[tagKey];
         if (!tag) return null;
         
         const Icon = tag.icon;
         return (
-          <li key={index} style={{display:'flex', alignItems: "center", justifyContent: "center"}} className={`flex items-center gap-2 rounded-full py-1 px-3 text-xs ${tag.class}`}>
-           
-            <Icon className={`w-6 h-4`} /> 
-            
-            <span >{tag.name}</span>
+          <li key={index} style={{ display: 'flex', alignItems: "center", justifyContent: "center" }} className={`flex items-center gap-2 rounded-full py-1 px-3 text-xs ${tag.class}`}>
+            <Icon className="w-6 h-4" /> 
+            <span>{tag.name}</span>
           </li>
         );
       })}

@@ -6,10 +6,13 @@ import LinkButton from "./LinkButton.jsx"
 import TagsComponent from "./TagsComponents"; // Asegúrate de tener la ruta correcta para el nuevo componente
 import data from 'public/cv.json'; // Ajusta la importación de acuerdo a la estructura de tu proyecto
 
-const PROJECTS = data.PROJECTS.map((project:any) => ({
-  ...project,
-  tags: project.tags.map((tag:any) => tag.replace("TAGS.", "")), // Mantén solo las claves
-}));
+const PROJECTS = data.PROJECTS
+  .filter((project) => project.featured) // Filtra los proyectos destacados
+  .map((project) => ({
+    ...project,
+    tags: project.tags.map((tag) => tag.replace("TAGS.", "")), // Mantén solo las claves
+  }))
+  .slice(0, 3); // Muestra solo los primeros tres
 ---
 <div class="flex flex-col gap-y-16">
   {PROJECTS.map(({ image, title, description, tags, link, github }:any) => (
@@ -23,7 +26,7 @@ const PROJECTS = data.PROJECTS.map((project:any) => ({
       <div class="w-full md:w-1/2 md:max-w-lg">
         <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">{title}</h3>
         <div class="flex flex-wrap mt-2">
-          <TagsComponent tags={tags} /> 
+          <TagsComponent tags={tags} max={3} /> 
         </div>
         <div class="mt-2 text-gray-700 dark:text-gray-400">{description}</div>
         <footer class="flex items-end justify-start mt-4 gap-x-4">

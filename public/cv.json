@@ -27,7 +27,7 @@
     "imageSrc": "/me.jpg",
     "linkedInUrl": "https://www.linkedin.com/in/brianpadilla01",
     "email": "brianpadilla.work@gmail.com",
-    "description": "Soy Brian Padilla, un desarrollador backend capacitado en la creación de aplicaciones robustas y escalables utilizando tecnologías como NestJS, PostgreSQL. Mi enfoque está en ofrecer soluciones eficientes y seguras, optimizando siempre la experiencia del usuario final.",
+    "description": "Soy Brian Padilla, un desarrollador Fullstack con orientacion a Backend capacitado en la creación de aplicaciones robustas y escalables utilizando tecnologías como NestJS, PostgreSQL. Mi enfoque está en ofrecer soluciones eficientes y seguras, optimizando siempre la experiencia del usuario final.",
     "badgeText": "Disponible para trabajar"
   },
   "aboutme": {
@@ -64,6 +64,40 @@
       "title": "Experiencias culinarias",
       "link": "https://frontdeploy.vercel.app",
       "description": "Acerca chefs con sus comensales para que pueda establecer eventos de no más de 8 personas con localización, el comensal puede reservar una experiencia culinaria con Stripe.",
+      "technologies": "Nestjs | nextjs | tailwind | typescript | prisma | postgres | auth0 | jwt | cloudinary | nodemailer | stripe",
+      "github": "https://github.com/ottorst/pryback",
+      "image": "/projects/gourmet-affair.jpg",
+      "tags": [
+        "TAGS.NEXT",
+        "TAGS.TAILWIND","TAGS.NODEJS","TAGS.NODEJS"
+      ],
+      "role": "Backend",
+      "featured": true
+    },
+    {
+      "title": "Dios Nuestro Padre - Aplicación para la Iglesia DNP",
+      "link": "https://github.com/brianpadilla3072/client-dnp-app",
+      "description": "Desarrollé la aplicación con el objetivo de proporcionar a los miembros de la iglesia acceso rápido y fácil a devocionales, fechas importantes y funcionalidades de perfil.",
+      "technologies": "React Native | React | Express | SQLite | Swagger | JWT",
+      "github": "https://github.com/brianpadilla3072/client-dnp-app",
+      "image": "https://raw.githubusercontent.com/brianpadilla3072/brianpadilla3072/main/diosnuestropadre.jpg",
+      "tags": ["TAGS.REACT_NATIVE"],
+      "role": "fullStack",
+      "featured": true
+    },
+    {
+      "title": "Dios Nuestro Padre - Aplicación para la Iglesia DNP",
+      "link": "https://github.com/brianpadilla3072/client-dnp-app",
+      "description": "Desarrollé la aplicación con el objetivo de proporcionar a los miembros de la iglesia acceso rápido y fácil a devocionales, fechas importantes y funcionalidades de perfil.",
+      "technologies": "React Native | React | Express | SQLite | Swagger | JWT",
+      "github": "https://github.com/brianpadilla3072/client-dnp-app",
+      "image": "https://raw.githubusercontent.com/brianpadilla3072/brianpadilla3072/main/diosnuestropadre.jpg",
+      "tags": ["TAGS.REACT_NATIVE"],
+      "role": "fullStack"
+    },{
+      "title": "Experiencias culinarias",
+      "link": "https://frontdeploy.vercel.app",
+      "description": "Acerca chefs con sus comensales para que pueda establecer eventos de no más de 8 personas con localización, el comensal puede reservar una experiencia culinaria con Stripe.",
       "technologies": "Nestjs | typescript | prisma | postgres | auth0 | jwt | cloudinary | nodemailer | stripe",
       "github": "https://github.com/ottorst/pryback",
       "image": "/projects/gourmet-affair.jpg",
@@ -94,7 +128,8 @@
       "description": "Desarrollo de KheironUI, una biblioteca de componentes de interfaz de usuario.",
       "date": "Actualmente...",
       "title": "FrontEnd",
-      "link": "https://kheiron.pages.dev/#pricing1"
+      "link": "https://kheiron.pages.dev/#pricing1",
+      "featured": true
     },
      {
       "company": "Cámara Junior Internacional",
@@ -103,7 +138,8 @@
       "description": "Contribuí activamente en la selección y clasificación de los participantes en diversas categorías.",
       "date": "2021-2023",
       "title": "Miembro",
-      "link": "https://jcibahiablanca.org.ar"
+      "link": "https://jcibahiablanca.org.ar",
+      "featured": true
     }
   ]
 }
