@@ -14,7 +14,7 @@ const MobileMenu = ({ navItems, id = "" }) => {
       {/* Botón para abrir el menú */}
       <button
         onClick={toggleMenu}
-        className={`fixed top-4 right-4 z-20 bg-blue-500 text-white p-2 rounded-full shadow-lg focus:outline-none focus:ring-2 ring-blue-300 md:hidden 
+        className={`fixed top-4 right-4 z-20 inline-flex bg-gray-100 text-gray-800 border-gray-300 items-center justify-center gap-2 px-3 py-2 space-x-2 text-base transition dark:text-white dark:bg-gray-800 border dark:border-gray-600 focus-visible:ring-yellow-500/80 text-md hover:bg-gray-800 hover:border-gray-900 group max-w-fit rounded-xl hover:text-white focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-white focus-visible:ring-offset-2 active:bg-black text-white p-2 rounded-full shadow-lg focus:outline-none focus:ring-2 ring-blue-300 md:hidden 
         ${isOpen ? 'hidden ' : 'block'}`}
         aria-label="Abrir menú"
       >
