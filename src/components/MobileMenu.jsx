@@ -1,21 +1,60 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ThemeToggle from './ThemeToggle.astro';
 import ButtonCv from './ButtonCv';
 
 const MobileMenu = ({ navItems, id = "" }) => {
   const [isOpen, setIsOpen] = useState(false);
+  let touchStartX = 0;
+  let touchEndX = 0;
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
+  // Maneja la apertura del menú
+  const openMenu = () => {
+    setIsOpen(true);
   };
+
+  // Maneja el cierre del menú
+  const closeMenu = () => {
+    setIsOpen(false);
+  };
+
+  // Detecta el inicio del gesto de deslizamiento
+  const handleTouchStart = (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+  };
+
+  // Detecta el final del gesto de deslizamiento
+  const handleTouchEnd = () => {
+    if (touchEndX > touchStartX + 50) {
+      openMenu(); // Abre el menú si se desliza hacia la derecha
+    } else if (touchEndX < touchStartX - 50) {
+      closeMenu(); // Cierra el menú si se desliza hacia la izquierda
+    }
+  };
+
+  const handleTouchMove = (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+  };
+
+  // Agrega los listeners para los eventos táctiles
+  useEffect(() => {
+    window.addEventListener('touchstart', handleTouchStart);
+    window.addEventListener('touchmove', handleTouchMove);
+    window.addEventListener('touchend', handleTouchEnd);
+
+    return () => {
+      window.removeEventListener('touchstart', handleTouchStart);
+      window.removeEventListener('touchmove', handleTouchMove);
+      window.removeEventListener('touchend', handleTouchEnd);
+    };
+  }, []);
 
   return (
     <>
       {/* Botón para abrir el menú */}
       <button
-        onClick={toggleMenu}
+        onClick={openMenu} // Cambiado a openMenu
         className={`fixed top-4 right-4 z-20 inline-flex bg-gray-100 text-gray-800 border-gray-300 items-center justify-center gap-2 px-3 py-2 space-x-2 text-base transition dark:text-white dark:bg-gray-800 border dark:border-gray-600 focus-visible:ring-yellow-500/80 text-md hover:bg-gray-800 hover:border-gray-900 group max-w-fit rounded-xl hover:text-white focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-white focus-visible:ring-offset-2 active:bg-black text-white p-2 rounded-full shadow-lg focus:outline-none focus:ring-2 ring-blue-300 md:hidden 
-        ${isOpen ? 'hidden ' : 'block'}`}
+        ${isOpen ? 'hidden' : 'block'}`}
         aria-label="Abrir menú"
       >
         ☰
@@ -29,14 +68,7 @@ const MobileMenu = ({ navItems, id = "" }) => {
         }`}
         style={{ animation: 'nav-shadown 1s linear both' }}
       >
-        {/* Botón para cerrar el menú */}
-        <button
-          onClick={toggleMenu}
-          className="absolute top-4 right-4 text-2xl text-gray-600 dark:text-gray-200 focus:outline-none"
-          aria-label="Cerrar menú"
-        >
-          &times;
-        </button>
+       
 
         {navItems.map((link, index) => (
           <a
