@@ -47,9 +47,9 @@
     "technologies": "React Native | NodeJS | Express | JWT | C++ | PHP | Jest | React | Vite | NextJS | Nest | Git | GitHub | Postman | Photoshop | Tailwind | Leaflet | ElectronJS | Java | Pascal | HTML | CSS | Firebase | Bootstrap"
   },
   "footer": {
-    "name": "midudev",
-    "contactEmail": "miduga@gmail.com",
-    "websiteUrl": "https://midu.dev/"
+    "name": "Brian Padilla",
+    "contactEmail": "brianpadilla.work@gmail.com",
+    "websiteUrl": "https://brian-padilla-dev.vercel.app"
   },
   "contact": {
     "phone": "(+54) 291 437 7615",
