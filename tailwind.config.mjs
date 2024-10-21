@@ -3,7 +3,30 @@ export default {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	darkMode: 'class',
 	theme: {
-		extend: {},
+		extend: {colors: {
+			'custom-blue-background': '#101426',
+		  },
+		  keyframes: {
+			fadeInUp: {
+			  '0%': { opacity: 0, transform: 'translateY(50px)' },
+			  '100%': { opacity: 1, transform: 'translateY(0)' },
+			},
+		  },
+		  animation: {
+			fadeInUp: 'fadeInUp 0.3s ease-out forwards',
+		  },},
 	},
-	plugins: [],
+	plugins: [
+		function ({ addUtilities }) {
+		  addUtilities({
+			'.hide-scrollbar': {
+			  'scrollbar-width': 'none', /* Firefox */
+			  '-ms-overflow-style': 'none', /* IE and Edge */
+			},
+			'.hide-scrollbar::-webkit-scrollbar': {
+			  display: 'none', /* Chrome, Safari, Edge */
+			},
+		  })
+		}
+	  ],
 }

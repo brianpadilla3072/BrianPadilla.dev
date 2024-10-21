@@ -69,22 +69,61 @@
       "image": "/projects/gourmet-affair.jpg",
       "tags": [
         "TAGS.NEXT",
-        "TAGS.TAILWIND","TAGS.NODEJS","TAGS.NODEJS"
+        "TAGS.TAILWIND",
+        "TAGS.NODEJS",
+        "TAGS.NODEJS",
+        "TAGS.TYPESCRIPT",
+        "TAGS.PRISMA",
+        "TAGS.AUTH0",
+        "TAGS.JWT",
+        "TAGS.CLOUDINARY",
+        "TAGS.NODEMAILER",
+        "TAGS.STRIPE"
       ],
       "role": "Backend",
-      "featured": true
-    },
+      "featured": true,
+      "frontend": {
+        "description": "La interfaz de usuario fue diseñada con Next.js y Tailwind CSS, asegurando una experiencia rápida y responsiva tanto para chefs como para comensales. El diseño incluye un sistema de reservas intuitivo, integración con Stripe para pagos y soporte multimedia con Cloudinary.",
+        "links": {
+          "deployd": "https://frontdeploy.vercel.app"
+        }
+      },
+      "backend": {
+        "description": "El backend fue desarrollado utilizando NestJS y Prisma, gestionando la autenticación de usuarios a través de Auth0 y JWT. El sistema maneja pagos mediante Stripe, envíos de correos automáticos con Nodemailer y almacenamiento de medios con Cloudinary. La base de datos utilizada es PostgreSQL.",
+        "links": {
+          "deployd": "https://pryback-10xh.onrender.com/apidoc"
+        }
+      }
+    },    
     {
       "title": "Dios Nuestro Padre - Aplicación para la Iglesia DNP",
       "link": "https://github.com/brianpadilla3072/client-dnp-app",
-      "description": "Desarrollé la aplicación con el objetivo de proporcionar a los miembros de la iglesia acceso rápido y fácil a devocionales, fechas importantes y funcionalidades de perfil.",
-      "technologies": "React Native | React | Express | SQLite | Swagger | JWT",
+      "description": "Desarrollé la aplicación con el objetivo de proporcionar a los miembros de la iglesia acceso rápido y fácil a devocionales, fechas importantes y funcionalidades de perfil..",
+      "technologies": "React Native | Express | SQLite | Swagger | JWT",
       "github": "https://github.com/brianpadilla3072/client-dnp-app",
       "image": "https://raw.githubusercontent.com/brianpadilla3072/brianpadilla3072/main/diosnuestropadre.jpg",
-      "tags": ["TAGS.REACT_NATIVE"],
+      "tags": [
+        "TAGS.REACT_NATIVE",
+        "TAGS.EXPRESS",
+        "TAGS.SQLITE",
+        "TAGS.SWAGGER",
+        "TAGS.JWT"
+      ],
       "role": "fullStack",
-      "featured": true
-    },
+      "featured": true,
+      "frontend": {
+        "description": "La aplicación móvil fue construida con React Native, proporcionando una interfaz amigable y accesible para los usuarios de la iglesia. Implementa funcionalidades como la visualización de devocionales diarios, acceso a fechas importantes y personalización de perfiles.",
+        "links": {
+          "deployd": "https://github.com/brianpadilla3072/client-dnp-app"
+        }
+      },
+      "backend": {
+        "description": "El backend está desarrollado en Express, con JWT para autenticación y SQLite como base de datos local. Se utiliza Swagger para la documentación de la API, facilitando la integración y desarrollo continuo.",
+        "links": {
+          "deployd": "https://github.com/brianpadilla3072/server-dnp-app"
+        }
+      }
+    },    
     {
       "title": "Dios Nuestro Padre - Aplicación para la Iglesia DNP",
       "link": "https://github.com/brianpadilla3072/client-dnp-app",
