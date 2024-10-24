@@ -39,12 +39,12 @@ const TAGS = {
   },
 };
 
-const TagsComponent = ({ tags, max = 0 }) => {
+const TagsComponent = ({ tags, max = 0, className= "" }) => {
   // Limit the number of tags if `max` is greater than zero
   const visibleTags = max > 0 ? tags.slice(0, max) : tags;
 
   return (
-    <ul className="flex flex-wrap gap-2">
+    <ul className={`flex flex-wrap gap-2 ${className}`}>
       {visibleTags.map((tagKey, index) => {
         const tag = TAGS[tagKey];
         if (!tag) return null;

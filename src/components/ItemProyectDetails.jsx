@@ -83,11 +83,12 @@ const ItemProjectDetails = ({ project, isVisibleItemProyectDetails, functionChan
 
             Backend
           </h2>
-          <p>Lorem ipsum dolor sit amet...</p>
-          <p>Lorem ipsum dolor sit amet...</p>   <p>Lorem ipsum dolor sit amet...</p>   <p>Lorem ipsum dolor sit amet...</p>   <p>Lorem ipsum dolor sit amet...</p>   <p>Lorem ipsum dolor sit amet...</p>   <p>Lorem ipsum dolor sit amet...</p>   <p>Lorem ipsum dolor sit amet...</p>   <p>Lorem ipsum dolor sit amet...</p>   <p>Lorem ipsum dolor sit amet...</p>   <p>Lorem ipsum dolor sit amet...</p>   <p>Lorem ipsum dolor sit amet...</p>   <p>Lorem ipsum dolor sit amet...</p>
+          <TagsComponent className="my-3" tags={project.backend.tags.map(tag => tag.replace('TAGS.', ''))} max={3} />
+
+          <p>{project.backend.description}</p>
         </section>
         <section className="w-full mx-1  lg:max-w-4xl md:max-w-2xl">
-          <h2 className="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white">
+          <h2 className="flex items-center mb-3 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white">
             <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
               <rect x="3" y="4" width="18" height="14" rx="2" ry="2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></rect>
 
@@ -102,9 +103,10 @@ const ItemProjectDetails = ({ project, isVisibleItemProyectDetails, functionChan
 
             Frontend
           </h2>
-          <p>Lorem ipsum dolor sit amet...</p>
-          <p>Lorem ipsum dolor sit amet...</p>   <p>Lorem ipsum dolor sit amet...</p>   <p>Lorem ipsum dolor sit amet...</p>   <p>Lorem ipsum dolor sit amet...</p>   <p>Lorem ipsum dolor sit amet...</p>   <p>Lorem ipsum dolor sit amet...</p>   <p>Lorem ipsum dolor sit amet...</p>   <p>Lorem ipsum dolor sit amet...</p>   <p>Lorem ipsum dolor sit amet...</p>   <p>Lorem ipsum dolor sit amet...</p>   <p>Lorem ipsum dolor sit amet...</p>   <p>Lorem ipsum dolor sit amet...</p>
-        </section>
+          <TagsComponent className="mb-3" tags={project.frontend.tags.map(tag => tag.replace('TAGS.', ''))} max={3} />
+
+          <p>{project.frontend.description}</p>
+          </section>
       </article>
     </div>
   );

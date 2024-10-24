@@ -54,7 +54,7 @@ const ListProyects = () => {
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)} />
 
-        <div className="flex mt-3 flex-col gap-y-16">
+        <div className="flex mt-3 flex-col gap-y-8 ">
           {/* Renderiza el loader si los proyectos están cargando */}
           {isLoading ? (
             Array.from({ length: 3 }).map((_, index) => (
@@ -66,8 +66,8 @@ const ListProyects = () => {
               <article 
                 onClick={() => handllerVisivilityItemProyectDetails(project)} 
                 key={index} 
-                className="flex flex-col space-y-8 md:flex-row md:space-x-8 project">
-                <div className="w-full md:w-1/2">
+                className="flex hover:rounded-xl hover:bg-hover-ligth-background dark:hover:bg-hover-blue-background  p-4 flex-col space-y-8 md:flex-row md:space-x-8 project">
+                <div className="w-full md:w-1/2 flex justify-center items-center ">
                   <img src={project.image} alt={project.title} className="object-cover w-full h-56 rounded-xl" />
                 </div>
                 <div className="w-full md:w-1/2">

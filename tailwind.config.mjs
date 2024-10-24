@@ -4,7 +4,7 @@ export default {
 	darkMode: 'class',
 	theme: {
 		extend: {colors: {
-			'custom-blue-background': '#101426',
+			'custom-blue-background': '#101426','hover-blue-background': '#171b2c',"hover-ligth-background":"#b8b8e5"
 		  },
 		  keyframes: {
 			fadeInUp: {
