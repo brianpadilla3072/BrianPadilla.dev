@@ -87,7 +87,8 @@
       ],
         "description": "La interfaz de usuario fue diseñada con Next.js y Tailwind CSS, asegurando una experiencia rápida y responsiva tanto para chefs como para comensales. El diseño incluye un sistema de reservas intuitivo, integración con Stripe para pagos y soporte multimedia con Cloudinary.",
         "links": {
-          "deployd": "https://frontdeploy.vercel.app"
+          "deployd": "https://frontdeploy.vercel.app",
+          "code":"https://github.com/NAyalaB/pryfront"
         }
       },
       "backend": {
@@ -98,7 +99,8 @@
         "TAGS.JWT","TAGS.NODEMAILER","TAGS.CLOUDINARY"],
         "description": "El backend fue desarrollado utilizando NestJS y Prisma, gestionando la autenticación de usuarios a través de Auth0 y JWT. El sistema maneja pagos mediante Stripe, envíos de correos automáticos con Nodemailer y almacenamiento de medios con Cloudinary. La base de datos utilizada es PostgreSQL.",
         "links": {
-          "deployd": "https://pryback-10xh.onrender.com/apidoc"
+          "deployd": "https://pryback-10xh.onrender.com/apidoc",
+          "code": "https://github.com/ottorst/pryback"
         }
       }
     },    
@@ -124,7 +126,8 @@
       ],
         "description": "La aplicación móvil fue construida con React Native, proporcionando una interfaz amigable y accesible para los usuarios de la iglesia. Implementa funcionalidades como la visualización de devocionales diarios, acceso a fechas importantes y personalización de perfiles.",
         "links": {
-          "deployd": "https://github.com/brianpadilla3072/client-dnp-app"
+          "download": "https://github.com/brianpadilla3072/client-dnp-app",
+          "code": "https://github.com/brianpadilla3072/client-dnp-app"
         }
       },
       "backend": {
@@ -136,7 +139,8 @@
       ],
         "description": "El backend está desarrollado en Express, con JWT para autenticación y SQLite como base de datos local. Se utiliza Swagger para la documentación de la API, facilitando la integración y desarrollo continuo.",
         "links": {
-          "deployd": "https://github.com/brianpadilla3072/server-dnp-app"
+          "deployd": "https://server-dnp-app.vercel.app/",
+          "code":"https://github.com/MarcosRehtanz/server-DNP-app"
         }
       }
     }

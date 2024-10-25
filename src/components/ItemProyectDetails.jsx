@@ -51,18 +51,7 @@ const ItemProjectDetails = ({ project, isVisibleItemProyectDetails, functionChan
             <h3 className="text-2xl font-bold">{project.title}</h3>
             <TagsComponent tags={project.tags.map(tag => tag.replace('TAGS.', ''))} max={3} />
             <p className="mt-2 text-gray-700 dark:text-gray-400">{project.description}</p>
-            <footer className="flex gap-4 mt-4">
-              {project.github && (
-                <LinkButton href={project.github}>
-                  <GitHub className="w-5 h-5" /> Código
-                </LinkButton>
-              )}
-              {project.link && (
-                <LinkButton href={project.link}>
-                  <Link className="w-5 h-5" /> Vista previa
-                </LinkButton>
-              )}
-            </footer>
+            
           </div>
         </section>
 
@@ -86,6 +75,18 @@ const ItemProjectDetails = ({ project, isVisibleItemProyectDetails, functionChan
           <TagsComponent className="my-3" tags={project.backend.tags.map(tag => tag.replace('TAGS.', ''))} max={3} />
 
           <p>{project.backend.description}</p>
+          <div className="flex gap-4 mt-4">
+          {project.backend.links.deployd && (
+                <LinkButton href={project.backend.links.deployd}>
+                  <Link className="w-5 h-5" /> Deploy 
+                </LinkButton>
+              )}
+          {project.backend.links.code && (
+                <LinkButton href={project.backend.links.code}>
+                  <Link className="w-5 h-5" /> Code 
+                </LinkButton>
+              )}
+          </div>
         </section>
         <section className="w-full mx-1  lg:max-w-4xl md:max-w-2xl">
           <h2 className="flex items-center mb-3 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white">
@@ -106,6 +107,23 @@ const ItemProjectDetails = ({ project, isVisibleItemProyectDetails, functionChan
           <TagsComponent className="mb-3" tags={project.frontend.tags.map(tag => tag.replace('TAGS.', ''))} max={3} />
 
           <p>{project.frontend.description}</p>
+          <div className="flex gap-4 mt-4">
+          {project.frontend.links?.deployd && (
+                <LinkButton href={project.backend.links.deployd}>
+                  <Link className="w-5 h-5" /> Deploy 
+                </LinkButton>
+              )}
+              {project.frontend.links?.download && (
+                <LinkButton href={project.backend.links.download}>
+                  <Link className="w-5 h-5" /> Download 
+                </LinkButton>
+              )}
+          {project.frontend.links?.code && (
+                <LinkButton href={project.backend.links.code}>
+                  <Link className="w-5 h-5" /> Code 
+                </LinkButton>
+              )}
+          </div>
           </section>
       </article>
     </div>
