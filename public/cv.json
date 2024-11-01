@@ -49,7 +49,20 @@
   "footer": {
     "name": "Brian Padilla",
     "contactEmail": "brianpadilla.work@gmail.com",
-    "websiteUrl": "https://brian-padilla-dev.vercel.app"
+    "websiteUrl": "https://brian-padilla-dev.vercel.app",
+    "description":"Desarrollador Fullstack apasionado por crear soluciones innovadoras y compartir conocimientos a través de contenido educativo.",
+    "explorer": {
+      "proyects":"/Proyectos",
+      "skils": "/",
+      "aboutme":"/#sobre-mi"
+    },
+    "icons": {
+      "enterprice":"/",
+      "blog":"https://medium.com/@brianpadilla01",
+      "youtube":"https://www.youtube.com/@brianpadilla01",
+      "instagram":"https://www.instagram.com/brianpadilla01/"
+
+    }
   },
   "contact": {
     "phone": "(+54) 291 437 7615",

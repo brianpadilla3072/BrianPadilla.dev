@@ -1,101 +1,186 @@
 ---
-const cv = await import('public/cv.json');
+import cv from "public/cv.json"; // Ajusta la importación de acuerdo a la estructura de tu proyecto
+import SectionContainer from "@/components/SectionContainer.astro"; // Asegúrate de que el camino es correcto
+import LinkButton from "./LinkButton.jsx";
+import ProfileCheck from "./icons/ProfileCheck.astro";
+
 const currentYear = new Date().getFullYear();
 ---
 
-<footer class="bg-muted text-muted-foreground">
-  <div class="container mx-auto px-6 py-8">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<SectionContainer class="mt-8 pt-8 p-3">
+  <div class="container mx-auto px-6 py-8 flex flex-col justify-between">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-9">
       <!-- Sección de presentación -->
       <div class="space-y-4">
-        <h2 class="text-2xl font-bold text-primary">{cv.footer.name}</h2>
+        <div class= "flex gap-1 justify-start items-center">  
+          <ProfileCheck/>
+          <h2 class="text-2xl font-bold text-primary">{cv.footer.name}</h2>
+        </div>
         <p class="text-sm">
-          Desarrollador Fullstack apasionado por crear soluciones innovadoras y compartir conocimientos a través de contenido educativo.
+          {cv.footer.description}
         </p>
       </div>
 
       <!-- Sección de navegación (Explora) -->
-      <div>
+      <div class="flex flex-col justify-end">
         <h3 class="text-lg font-semibold mb-4">Explora</h3>
         <ul class="space-y-2 text-sm">
-          <li><a href="/Proyectos" class="hover:text-primary transition-colors">Proyectos</a></li>
-          <li><a href="/habilidades" class="hover:text-primary transition-colors">Habilidades</a></li>
-          <li><a href="/blog" class="hover:text-primary transition-colors">Blog</a></li>
-          <li><a href="/#sobre-mi" class="hover:text-primary transition-colors">Sobre Mí</a></li>
-        </ul>
-      </div>
-
-      <!-- Sección de redes sociales (Conéctate) -->
-      <div>
-        <h3 class="text-lg font-semibold mb-4">Conéctate</h3>
-        <ul class="space-y-2 text-sm">
           <li>
-            <a href="https://youtube.com/@tucanal" class="flex items-center hover:text-primary transition-colors">
-              <svg class="mr-2" width="18" height="18" xmlns="http://www.w3.org/2000/svg">
-                <!-- SVG del ícono de YouTube aquí -->
-              </svg>
-              YouTube
-            </a>
+            <a href={cv.footer.explorer.proyects} class="hover:text-primary transition-colors"
+              >Proyectos</a
+            >
           </li>
           <li>
-            <a href="https://tublog.com" class="flex items-center hover:text-primary transition-colors">
-              <svg class="mr-2" width="18" height="18" xmlns="http://www.w3.org/2000/svg">
-                <!-- SVG del ícono de RSS aquí -->
-              </svg>
-              Blog
-            </a>
+            <a href={cv.footer.explorer.skils} class="hover:text-primary transition-colors"
+              >Habilidades</a
+            >
           </li>
           <li>
-            <a href="https://github.com/tuusuario" class="flex items-center hover:text-primary transition-colors">
-              <svg class="mr-2" width="18" height="18" xmlns="http://www.w3.org/2000/svg">
-                <!-- SVG del ícono de GitHub aquí -->
-              </svg>
-              GitHub
-            </a>
+            <a href={cv.footer.icons.blog} class="hover:text-primary transition-colors">
+              Blog</a
+            >
           </li>
           <li>
-            <a href="https://linkedin.com/in/tuusuario" class="flex items-center hover:text-primary transition-colors">
-              <svg class="mr-2" width="18" height="18" xmlns="http://www.w3.org/2000/svg">
-                <!-- SVG del ícono de LinkedIn aquí -->
-              </svg>
-              LinkedIn
-              
-            </a>
+            <a href={cv.footer.explorer.aboutme} class="hover:text-primary transition-colors"
+              >Sobre Mí</a
+            >
           </li>
         </ul>
       </div>
     </div>
-    <!-- Sección inferior con derechos reservados -->
+
     <div class="mt-8 pt-8 border-t border-muted-foreground/20">
-      <div class="flex flex-col md:flex-row justify-between items-center">
-        <p class="text-sm">&copy; {currentYear} {cv.footer.name}. Casi todos los derechos reservados.</p>
-        <div class="flex space-x-4 mt-4 md:mt-0">
-          <a href={`mailto:${cv.footer.contactEmail}`} class="hover:text-primary transition-colors">
-            <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg">
-              <!-- SVG del ícono de correo aquí -->
-            </svg>
-            <span class="sr-only">Email</span>
-          </a>
-          <a href="https://twitter.com/tuusuario" class="hover:text-primary transition-colors">
-            <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg">
-              <!-- SVG del ícono de Twitter aquí -->
-            </svg>
-            <span class="sr-only">Twitter</span>
-          </a>
-          <a href="https://github.com/tuusuario" class="hover:text-primary transition-colors">
-            <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg">
-              <!-- SVG del ícono de GitHub aquí -->
-            </svg>
-            <span class="sr-only">GitHub</span>
-          </a>
-          <a href="https://linkedin.com/in/tuusuario" class="hover:text-primary transition-colors">
-            <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg">
-              <!-- SVG del ícono de LinkedIn aquí -->
-            </svg>
-            <span class="sr-only">LinkedIn</span>
-          </a>
-        </div>
+      <div class="flex justify-center items-center space-x-4 mt-4 md:mt-0">
+        <!-- Icono de Empresa -->
+        <LinkButton href={cv.footer.icons.enterprice}>
+          <svg
+            fill="currentColor"
+            class="size-6"
+            height="100%"
+            width="100%"
+            viewBox="0 0 36 36"
+            id="icon"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <!-- Icono original -->
+            
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+              <defs>
+                <style>.cls-1 { fill: none; }</style>
+              </defs>
+              <title>enterprise</title>
+              <rect x="10" y="10" width="2" height="4"></rect>
+              <rect x="10" y="16" width="2" height="4"></rect>
+              <rect x="16" y="10" width="2" height="4"></rect>
+              <rect x="16" y="16" width="2" height="4"></rect>
+              <rect x="10" y="22" width="2" height="4"></rect>
+              <rect x="16" y="22" width="2" height="4"></rect>
+              <path
+                d="M32,16a2,2,0,0,0-2-2H24V6a2,2,0,0,0-2-2H6A2,2,0,0,0,4,6V32H32ZM6,6H22V30H6ZM24,30V16h6V30Z"
+              ></path>
+              <rect id="_Transparent_Rectangle_" data-name="<Transparent Rectangle>" class="cls-1" width="36" height="36"></rect>
+            </g>
+                </svg>
+
+        </LinkButton>
+
+        <!-- Icono de Blog -->
+        <LinkButton href={cv.footer.icons.blog}>
+          <svg
+            version="1.1"
+            fill="currentColor"
+            class="size-6"
+            height="100%"
+            width="100%"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 512 512"
+            xml:space="preserve"
+          >
+            <g id="SVGRepo_bgCarrier" stroke-width="3" stroke-height="3"></g><g
+              id="SVGRepo_tracerCarrier"
+              stroke-linecap="round"
+              stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier">
+              <g id="SVGRepo_bgCarrier" stroke-width="3" stroke-height="3"></g><g
+                id="SVGRep</g>o_tracerCarrier"
+                stroke-linecap="round"
+                stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier">
+                <style type="text/css"></style>
+                <g>
+                  <path
+                    class="st0"
+                    d="M421.073,221.719c-0.578,11.719-9.469,26.188-23.797,40.094v183.25c-0.016,4.719-1.875,8.719-5.016,11.844 c-3.156,3.063-7.25,4.875-12.063,4.906H81.558c-4.781-0.031-8.891-1.844-12.047-4.906c-3.141-3.125-4.984-7.125-5-11.844V152.219 c0.016-4.703,1.859-8.719,5-11.844c3.156-3.063,7.266-4.875,12.047-4.906h158.609c12.828-16.844,27.781-34.094,44.719-49.906 c0.078-0.094,0.141-0.188,0.219-0.281H81.558c-18.75-0.016-35.984,7.531-48.25,19.594c-12.328,12.063-20.016,28.938-20,47.344 v292.844c-0.016,18.406,7.672,35.313,20,47.344C45.573,504.469,62.808,512,81.558,512h298.641c18.781,0,36.016-7.531,48.281-19.594 c12.297-12.031,20-28.938,19.984-47.344V203.469c0,0-0.125-0.156-0.328-0.313C440.37,209.813,431.323,216.156,421.073,221.719z"
+                  ></path>
+                  <path
+                    class="st0"
+                    d="M498.058,0c0,0-15.688,23.438-118.156,58.109C275.417,93.469,211.104,237.313,211.104,237.313 c-15.484,29.469-76.688,151.906-76.688,151.906c-16.859,31.625,14.031,50.313,32.156,17.656 c34.734-62.688,57.156-119.969,109.969-121.594c77.047-2.375,129.734-69.656,113.156-66.531c-21.813,9.5-69.906,0.719-41.578-3.656 c68-5.453,109.906-56.563,96.25-60.031c-24.109,9.281-46.594,0.469-51-2.188C513.386,138.281,498.058,0,498.058,0z"
+                  ></path>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </LinkButton>
+
+        <!-- Icono de YouTube -->
+
+        <LinkButton href={""}>
+          <svg
+            fill="currentColor"
+            class="size-6"
+            height="100%"
+            width="100%"
+            version="1.1"
+            id="Layer_1"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="-143 145 512 512"
+            xml:space="preserve"
+            ><g id="SVGRepo_bgCarrier" stroke-width="3"></g><g
+              id="SVGRepo_tracerCarrier"
+              stroke-linecap="round"
+              stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier">
+              <g>
+                <path
+                  d="M113,145c-141.4,0-256,114.6-256,256s114.6,256,256,256s256-114.6,256-256S254.4,145,113,145z M272.8,560.7 c-20.8,20.8-44.9,37.1-71.8,48.4c-27.8,11.8-57.4,17.7-88,17.7c-30.5,0-60.1-6-88-17.7c-26.9-11.4-51.1-27.7-71.8-48.4 c-20.8-20.8-37.1-44.9-48.4-71.8C-107,461.1-113,431.5-113,401s6-60.1,17.7-88c11.4-26.9,27.7-51.1,48.4-71.8 c20.9-20.8,45-37.1,71.9-48.5C52.9,181,82.5,175,113,175s60.1,6,88,17.7c26.9,11.4,51.1,27.7,71.8,48.4 c20.8,20.8,37.1,44.9,48.4,71.8c11.8,27.8,17.7,57.4,17.7,88c0,30.5-6,60.1-17.7,88C309.8,515.8,293.5,540,272.8,560.7z"
+                ></path>
+                <path
+                  d="M196.9,311.2H29.1c0,0-44.1,0-44.1,44.1v91.5c0,0,0,44.1,44.1,44.1h167.8c0,0,44.1,0,44.1-44.1v-91.5 C241,355.3,241,311.2,196.9,311.2z M78.9,450.3v-98.5l83.8,49.3L78.9,450.3z"
+                ></path>
+              </g>
+            </g></svg
+          >
+        </LinkButton>
+
+        <!-- Icono de Instagram -->
+        <LinkButton href={""}>
+          <svg
+            fill="currentColor"
+            class="size-6"
+            height="100%"
+            width="100%"
+            version="1.1"
+            id="Layer_1"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="-143 145 512 512"
+            xml:space="preserve"
+            ><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g
+              id="SVGRepo_tracerCarrier"
+              stroke-linecap="round"
+              stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier">
+              <g>
+                <path
+                  d="M113,145c-141.4,0-256,114.6-256,256s114.6,256,256,256s256-114.6,256-256S254.4,145,113,145z M272.8,560.7 c-20.8,20.8-44.9,37.1-71.8,48.4c-27.8,11.8-57.4,17.7-88,17.7c-30.5,0-60.1-6-88-17.7c-26.9-11.4-51.1-27.7-71.8-48.4 c-20.8-20.8-37.1-44.9-48.4-71.8C-107,461.1-113,431.5-113,401s6-60.1,17.7-88c11.4-26.9,27.7-51.1,48.4-71.8 c20.9-20.8,45-37.1,71.9-48.5C52.9,181,82.5,175,113,175s60.1,6,88,17.7c26.9,11.4,51.1,27.7,71.8,48.4 c20.8,20.8,37.1,44.9,48.4,71.8c11.8,27.8,17.7,57.4,17.7,88c0,30.5-6,60.1-17.7,88C309.8,515.8,293.5,540,272.8,560.7z"
+                ></path>
+                <path
+                  d="M191.6,273h-157c-27.3,0-49.5,22.2-49.5,49.5v52.3v104.8c0,27.3,22.2,49.5,49.5,49.5h157c27.3,0,49.5-22.2,49.5-49.5V374.7 v-52.3C241,295.2,218.8,273,191.6,273z M205.8,302.5h5.7v5.6v37.8l-43.3,0.1l-0.1-43.4L205.8,302.5z M76.5,374.7 c8.2-11.3,21.5-18.8,36.5-18.8s28.3,7.4,36.5,18.8c5.4,7.4,8.5,16.5,8.5,26.3c0,24.8-20.2,45.1-45.1,45.1C88,446.1,68,425.8,68,401 C68,391.2,71.2,382.1,76.5,374.7z M216.1,479.5c0,13.5-11,24.5-24.5,24.5h-157c-13.5,0-24.5-11-24.5-24.5V374.7h38.2 c-3.3,8.1-5.2,17-5.2,26.3c0,38.6,31.4,70,70,70c38.6,0,70-31.4,70-70c0-9.3-1.9-18.2-5.2-26.3h38.2V479.5z"
+                ></path>
+              </g>
+            </g></svg
+          >
+        </LinkButton>
       </div>
     </div>
   </div>
-</footer>
+</SectionContainer>

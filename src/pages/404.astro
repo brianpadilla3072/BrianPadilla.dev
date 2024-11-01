@@ -1,0 +1,42 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import TitleSection from "@/components/TitleSection.astro"
+import SectionContainer from "@/components/SectionContainer.astro"
+import LinkButton from "@/components/LinkButton.jsx";
+
+---
+
+<Layout title="404" description="Pagina no encontrada">
+    <SectionContainer className="mt-8 pt-8 p-3" >
+      <TitleSection className="flex justify-center items-center">
+        404 - Página No Encontrada
+      </TitleSection>
+      <div>
+            <p class="mt-4">Lo sentimos, la página que estás buscando no existe. Serás redirigido a la página de inicio en <span id="countdown">3</span> segundos.</p>
+            <p class="mt-2">Si no eres redirigido, 
+                <LinkButton href="/">
+                    haz clic aquí
+                </LinkButton>
+            </p>
+      </div>
+    </SectionContainer>
+  </Layout>
+    <script>
+      let countdown = 3; // Tiempo en segundos
+      function updateCountdown() {
+        const countdownElement = document.getElementById('countdown');
+        if (countdownElement) {
+            countdownElement.textContent = countdown.toString(); // Convertir a string
+            if (countdown <= 0) {
+              window.location.href = '/';
+            } else {
+              countdown--;
+              setTimeout(updateCountdown, 3000);
+            }
+        }
+      }
+
+      window.onload = () => {
+        updateCountdown(); // Iniciar el contador al cargar la página
+      };
+    </script>
